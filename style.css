@@ -4,7 +4,7 @@ html, body{padding: 0; margin: 0;}
 .page_container{ margin: auto;}
 
 .w-100{width: 100%;}
-body{background: gold; font-family: Arial, Helvetica, sans-serif;}
+body{background: #bfa75d; font-family: Arial, Helvetica, sans-serif;}
 
 
 /* header */
@@ -18,20 +18,56 @@ header {
     position: fixed;
     z-index: 100;
 }
-header .logo {height: 75px;padding: 5px;}
-header .logo img {height: 100%;}
+.header__logo1, .header__logo2 {height: 75px;padding: 5px;}
+.header__logo1 img, .header__logo2 img {height: 100%;}
 nav {display: flex;}
-.tenda {position: relative;}
-.tenda__li {height: 50px; padding: 15px; color: gold;}
-.tenda__li a{text-decoration: none;}
-.tenda__li:hover {background-color: gold; color: black;}
+.header__tenda{display: flex; flex-wrap: wrap;}
+.header__tenda__li {height: 75px; padding: 15px; color: #bfa75d; text-decoration: none; padding-top: 20px; font-size: 20px;}
+.header__tenda__li:hover {background-color: #bfa75d; color: black;}
 
-.separatore{height: 100px;}
+.separatore{height: 75px;}
 
 /* cover */
 .cover_img{width: 100%; height: auto;}
 
+/* testo */
+.text{padding: 0px 30px;}
+.text__titolo{text-align: center; font-size: 60px; margin-bottom: 0;}
+h2, .intro {text-align: center;}
+h3 {margin-bottom: 0;}
+
+
+/* cards */
+.cards{max-width: 1200px; margin: 40px auto; display: flex; flex-wrap: wrap;}
+.card{width: 30%; 
+    margin:0 1.5%; 
+    background: black;
+    border: 10px solid #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px black;
+}
+.card__image{width:100%; height: auto;}
+.card__copy{padding:5px 20px; color: #bfa75d;}
+.card__copy h3{margin-bottom:0}
 
 
 /* footer */
-footer{background-color: black; text-align: center; margin-top: 20px; color: gold; height: 25px;}
+footer{background-color: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
+
+
+
+
+/* tablet */
+@media (max-width: 998px){
+
+}
+
+/* telefono */
+@media (max-width: 767px){
+    /* header */
+    .header__logo2{display: none;}
+
+    /* Cards */
+	.card{width: 90%; margin:5%; }
+
+}
