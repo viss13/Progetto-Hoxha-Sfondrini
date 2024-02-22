@@ -26,7 +26,7 @@ nav {display: flex; height: 40px; margin: auto;}
 
 /* padding: sopra destra sotto sinistra */
 
-.header__tenda__li {height: 100%; padding: 10px; color: #222222; text-decoration: none; font-size: 20px;}
+.header__tenda__li {height: 100%; padding: 10px; color: #222222; text-decoration: none; font-size: 20px; width: 150px; text-align: center;}
 .header__tenda__li:hover {background-color: #222222; color: #bfa75d; border-radius: 8px;}
 
 .separatore{height: 75px;}
