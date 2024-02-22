@@ -3,6 +3,7 @@
 html, body{padding: 0; margin: 0;}
 .page_container{ margin: auto;}
 
+.page_container h1{padding-top: 20px;}
 .w-100{width: 100%;}
 body{background: #bfa75d; font-family: Arial, Helvetica, sans-serif;}
 
@@ -22,8 +23,11 @@ header {
 .header__logo1 img, .header__logo2 img {height: 100%;}
 nav {display: flex;}
 .header__tenda{display: flex; flex-wrap: wrap;}
-.header__tenda__li {height: 75px; padding: 15px; color: #bfa75d; text-decoration: none; padding-top: 20px; font-size: 20px;}
-.header__tenda__li:hover {background-color: #bfa75d; color: black;}
+
+/* padding: sopra destra sotto sinistra */
+
+.header__tenda__li {height: 75px; padding: 26px 15px 15px 15px; color: #bfa75d; text-decoration: none; font-size: 20px;}
+.header__tenda__li:hover {background-color: #222222; color: #bfa75d;}
 
 .separatore{height: 75px;}
 
