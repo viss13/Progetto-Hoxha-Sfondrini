@@ -56,13 +56,34 @@ h3 {margin-bottom: 0;}
 
 
 /* banner */
-.banner{background: #222222; height:50%;margin-top:40px; display: flex;}
+.banner{
+    background: #222222; 
+    height: 350px;
+    margin-top:50px; 
+    display: flex; 
+    flex-wrap: nowrap;
+    border: 10px solid #838181;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px black;
+}
 .banner__image{width:30%; height:100%;}
 .banner__copy{width:70%;height:100%;display: table; color: #c9c9c9;}
 .banner__copy__text{display: table-cell; vertical-align: middle;padding:30px;}
 .banner__copy__text h3{font-size: 36px;margin-bottom:0;}
 .banner__copy__text h4{font-size: 22px;margin: 5px 0}
 
+
+/* centro flex con sidebar */
+.centro-flex {display: flex; flex-wrap: nowrap; align-items: stretch;}
+
+.sidenav {width: 20%;padding: 5px; background: #222222;}
+.sidenav ul {list-style-type: none;}
+.sidenav li {padding: 5px 10px; color: #bfa75d;}
+.sidenav li:hover {background: #bfa75d; color: black;}
+.sidenav ul {padding-left: 0px;}
+.sidenav a {text-decoration: none; color: black;}
+
+main {width: 80%;padding: 10px;}
 
 /* footer */
 footer{background-color: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
@@ -82,5 +103,10 @@ footer{background-color: black; text-align: center; margin-top: 20px; color: #bf
 
     /* Cards */
 	.card{width: 90%; margin:5%; }
+
+    /* Banner */
+	.banner{height: 600px;}
+	.banner__image,
+	.banner__copy{width:100%;height:50%}
 
 }
