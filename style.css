@@ -18,6 +18,7 @@ header {
     padding: 0px 15px;
     position: fixed;
     z-index: 100;
+    /* cra cra pu pu */
 }
 .header__logo1, .header__logo2 {height: 75px;padding: 5px;}
 .header__logo1 img, .header__logo2 img {height: 100%;}
