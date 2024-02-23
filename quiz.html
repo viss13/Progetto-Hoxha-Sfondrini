@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name">
+    <title>Progetto</title>
+</head>
+<body>
+    <div class="page_container">
+        
+        
+        <header class="w-100">
+            <div class="header__logo1">
+                <img src="immagini/logo.png" alt="Logo">
+            </div>
+            <nav>
+                <div class="header__tenda">
+                    <a href="index.html" class="header__tenda__li">Home</a>
+                </div>
+                <div class="header__tenda">
+                    <a href="giocatori.html" class="header__tenda__li">Vincitori</a>
+                </div>
+                <div class="header__tenda">
+                    <a href="giocatori.html" class="header__tenda__li">Storia</a>
+                </div>
+            </nav>
+            <div class="header__logo2">
+                <img src="immagini/logo.png" alt="Logo">
+            </div>
+        </header>
+        <div class="separatore"></div>
+        <div id="quiz">
+            <div id="question">Domanda 1: Messi è meglio o peggio o uguale a CR7?</div>
+            <input type="radio" name="answer" value="2"> meglio<br>
+            <input type="radio" name="answer" value="1"> peggio<br>
+            <input type="radio" name="answer" value="2"> uguale<br>
+            <button onclick="checkAnswer()">Invia</button>
+        </div>
+    
+        <div id="result"></div>
+    
+        <script src="quiz.js"></script>
+</body>
