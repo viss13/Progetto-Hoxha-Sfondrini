@@ -18,7 +18,6 @@ header {
     padding: 0px 15px;
     position: fixed;
     z-index: 100;
-    /* cra cra pu pu */
 }
 .header__logo1, .header__logo2 {height: 75px;padding: 5px;}
 .header__logo1 img, .header__logo2 img {height: 100%;}
@@ -57,9 +56,11 @@ h3 {margin-bottom: 0;}
 
 
 /* banner */
+
+/*
 .banner{
     background: #222222; 
-    height: 350px;
+    height: 400px;
     margin-top:50px; 
     margin-left: 5px;
     margin-right: 5px;
@@ -69,25 +70,46 @@ h3 {margin-bottom: 0;}
     border-radius: 8px;
     box-shadow: 10px 25px 30px black;
 }
-.banner__image{width:30%; height:100%;}
+.banner__image{width:30%; height:100%; display: block;}
+.banner__image img{height: 100%; width: auto; object-fit: cover;}
 .banner__copy{width:70%;height:100%;display: table; color: #c9c9c9;}
 .banner__copy__text{display: table-cell; vertical-align: middle;padding:30px;}
-.banner__copy__text h3{font-size: 36px;margin-bottom:0;}
-.banner__copy__text h4{font-size: 22px;margin: 5px 0}
+.banner__copy__text h3{font-size: 44px;margin-bottom:0; color: #bfa75d;}
+.banner__copy__text h4{font-size: 27px;margin: 5px 0}
+.banner__copy__text h5{font-size: 18px;margin-top: 0;}
+*/
 
+.banner {
+    display: flex; 
+    flex-wrap: nowrap; 
+    margin: 50px 5px; 
+    background: #222222;
+    border: 10px solid #838181;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px black;
+}
+.banner__img {display: block; height: 350px; width: 30%;}
+.banner__img img {height: 100%; width: 100%; object-fit: cover;}
+
+.banner__copy {width: 70%; display: flex; align-items: center; padding: 10px; color: #c9c9c9;}
+.banner__copy__text{padding:30px;}
+.banner__copy__text h3{font-size: 44px;margin-bottom:0; color: #bfa75d;}
+.banner__copy__text h4{font-size: 27px;margin: 5px 0}
+.banner__copy__text h5{font-size: 18px;margin-top: 0;}
 
 /* centro flex con sidebar */
 .centro-flex {display: flex; flex-wrap: nowrap; align-items: stretch;}
 
-.sidenav {width: 20%;padding: 5px; background: #222222;}
-.sidenav ul {list-style-type: none;}
-.sidenav li {padding: 5px 10px; color: #bfa75d;}
+.sidenav {width: 15%;padding: 5px; background: #222222;}
+.sidenav__titolo{position: fixed; padding: 10px;}
+.sidenav ul {list-style-type: none; position: fixed; width: 15%}
+.sidenav li {padding: 5px 0px; margin: 0 60px ;color: #bfa75d; text-align: center;}
 .sidenav li:hover {background: #bfa75d; color: black;}
 .sidenav ul {padding-left: 0px;}
 .sidenav a {text-decoration: none; color: black;}
-.sidenav h2{color: #bfa75d;}
+.sidenav h2{color: #bfa75d; text-align: center; width: 15%;}
 
-main {width: 80%;padding: 10px;}
+main {width: 85%; padding: 10px;}
 
 /* footer */
 footer{background-color: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
@@ -112,8 +134,11 @@ footer{background-color: black; text-align: center; margin-top: 20px; color: #bf
 	.card{width: 90%; margin:5%; }
 
     /* Banner */
-	.banner{height: 600px;}
-	.banner__image,
-	.banner__copy{width:100%;height:50%}
+	.sidenav {display: none;}
+    .banner {flex-wrap: wrap; margin-bottom: 20px;}
+    .banner__img {width: 100%;}
+    .banner__copy {width: 100%;}
+
+    
 
 }
