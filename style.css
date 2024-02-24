@@ -134,6 +134,7 @@ footer{background-color: black; text-align: center; margin-top: 20px; color: #bf
 	.card{width: 90%; margin:5%; }
 
     /* Banner */
+    main {width: 100%; padding: 20px;}
 	.sidenav {display: none;}
     .banner {flex-wrap: wrap; margin-bottom: 20px;}
     .banner__img {width: 100%;}
