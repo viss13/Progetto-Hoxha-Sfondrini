@@ -36,7 +36,19 @@ nav {display: flex; height: 40px; margin: auto;}
     text-align: center;
     transition: all 0.3s;
 }
+.header__tenda__li__psdp {
+    height: 100%;
+    padding: 10px; 
+    color: #222222; 
+    text-decoration: none; 
+    font-size: 20px; 
+    width: 180px; 
+    text-align: center;
+    transition: all 0.3s;
+}
 .header__tenda__li:hover {background-color: #222222; color: #bfa75d; border-radius: 8px;}
+.header__tenda__li__psdp:hover {background-color: #222222; color: #bfa75d; border-radius: 8px;}
+
 
 .separatore{height: 75px;}
 
@@ -136,7 +148,7 @@ main {width: 85%; padding: 10px;}
     border: 1px solid #222;
     padding: 10px;
     margin: 10px 0;
-    text-align: left;
+    text-align: center;
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
@@ -144,9 +156,11 @@ main {width: 85%; padding: 10px;}
 .btn:hover.btn:hover:not([disabled]){background: #bfa75d; color: black;}
 .btn:disabled{cursor: no-drop;}
 
+.simply__flex{display: flex;}
+
 #next__btn {
-    background: #001e4d;
-    color: #fff;
+    background: #bfa75d;
+    color: black;
     font-weight: 500;
     width: 150px;
     border: 0;
@@ -156,6 +170,19 @@ main {width: 85%; padding: 10px;}
     cursor: pointer;
     display: none;
 }
+#psdp__btn {
+    background: #bfa75d;
+    color: black;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+.noDecoration{text-decoration: none; color: black;}
 
 .correct{
     background: #9aeabc;
@@ -166,6 +193,7 @@ main {width: 85%; padding: 10px;}
 
 /* footer */
 footer{background-color: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
+
 
 
 
