@@ -71,6 +71,7 @@ nav {display: flex; height: 40px; margin: auto;}
 
 
 /* testo */
+
 .text__titolo{text-align: center; font-size: 60px; margin-bottom: 0; color: #bfa75d;}
 h1, h2, .intro {text-align: center;}
 h3 {margin-bottom: 0;}
