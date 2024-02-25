@@ -114,17 +114,16 @@ h3 {margin-bottom: 0;}
 .scheda{
     width: 43%; 
     background: #bfa75d;
-    border: 10px solid #c9c9c9;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 10px 25px 30px black;
     height: 100%;
     display: flex;
 }
-.flex_center{display: flex; align-items: center; width: 45%;}
-.scheda__image{width:100%; height: 40%;}
+.flex_center{display: flex; align-items: center; width: 45%; justify-content: center;}
+.scheda__image{width: 98%; height: 100%;}
 
 .scheda__copy{
-    width: 55%;
+    width: 65%;
     padding:5px 20px; 
     color: black; 
     height: 100%; 
@@ -141,7 +140,9 @@ h3 {margin-bottom: 0;}
 }
 
 /* footer */
-footer{background-image: url(immagini/sfondo-quiz.png); /*text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;*/}
+
+.home-footer{background-image: url(immagini/sfondo-quiz.png); text-align: unset; margin-top: unset; color: unset; padding: unset;}
+footer{background: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
 
 .wa_ig_link{display: inline-block; width: 40px; height: 40px;}
 /* banner */
