@@ -1,56 +1,56 @@
 const questions = [
     {
-        question: "Meglio messi o ronaldo?",
+        question: "Chi ha vinto il pallone d'oro nel 2016?",
         answers: [
-            { text: "Pessi", correct: false},
-            { text: "Cr7", correct: true},
-            { text: "uguale", correct: false},
-            { text: "meglio noslin", correct: false},
+            { text: "Messi", correct: false},
+            { text: "Ronaldo", correct: true},
+            { text: "Benzema", correct: false},
+            { text: "Modric", correct: false},
         ]
     },
     {
-        question: "quanto fa 2+2?",
+        question: "Quando Luka Modric vinse il suo primo pallone d'oro, per che club giocava?",
         answers: [
-            { text: "5", correct: false},
-            { text: "6", correct: false},
-            { text: "2,333 periodico", correct: false},
-            { text: "4", correct: true},
+            { text: "Nel Barcellona", correct: false},
+            { text: "Nell'inter", correct: false},
+            { text: "Nella Juventus", correct: false},
+            { text: "Nel Real Madrid", correct: true},
         ]
     },
     {
-        question: "ciao",
+        question: "A che età Cristiano Ronaldo vinse il suo quinto pallone d'oro?",
         answers: [
-            { text: "ciao", correct: true},
-            { text: "bao", correct: false},
-            { text: "miao", correct: false},
-            { text: "bau", correct: false},
+            { text: "Aveva 32 anni", correct: true},
+            { text: "Aveva 28 anni", correct: false},
+            { text: "Non ha vinto cinque palloni d'oro", correct: false},
+            { text: "Aveva 27 anni", correct: false},
         ]
     },
     {
-        question: "Messi parte lo stesooooo",
+        question: "Cosa vinse Lionel Messi con l'Inter Miami nel 2023 per vincere il pallone d'oro?",
         answers: [
-            { text: "brutto gol", correct: false},
-            { text: "talento argentino", correct: false},
-            { text: "mazza che bomba", correct: false},
-            { text: "NON è VERO!", correct: true},
+            { text: "Vinse la champions league", correct: false},
+            { text: "Vinse il premio di miglior marcatore dell'anno", correct: false},
+            { text: "Vinse il campionato con il maggior numero di assist nell'anno solare", correct: false},
+            { text: "Non vinse nulla con l'Inter Miami ma vinse con l'argentina il mondiale", correct: true},
         ]
     },
     {
-        question: "chi ha l'ultima parola nel calcio?",
+        question: "Karim Benzema quanti palloni d'oro ha vinto nella sua carriera?",
         answers: [
-            { text: "gli arbitri", correct: false},
-            { text: "i giocatori più forti", correct: false},
-            { text: "i portieri", correct: false},
-            { text: "gli uruguagi", correct: true},
+            { text: "Ha vinto 3 palloni d'oro", correct: false},
+            { text: "Ha vinto 2 palloni d'oro", correct: false},
+            { text: "Ha vinto 1 pallone d'oro e uno d'argento", correct: false},
+            { text: "Ha vinto 1 pallone d'oro", correct: true},
         ]
     },
     {
-        question: "chi ha i polpacci più grossi del mondo calcistico?",
+        question: "Chi ha vinto più palloni d'oro di messi?",
         answers: [
-            { text: "shakiri", correct: true},
-            { text: "suarez", correct: false},
-            { text: "grealish", correct: false},
-            { text: "guarin", correct: false},
+            { text: "Cristiano Ronaldo", correct: false},
+            { text: "Nessuno ne ha vinti quanti lui", correct: true},
+            { text: "Johan Cruyff", correct: false},
+            { text: "Van Basten", correct: false},
         ]
     }
 ];
@@ -120,7 +120,7 @@ function showScore(){
         length}!`;
     nextButton.innerHTML = "Riprova";
     nextButton.style.display = "block";
-    psdpButton.innerHTML = "<a href='psdp.html' class = 'noDecoration'>Per saperne di più</a>";
+    psdpButton.innerHTML = "<a href='psdp.html' class = 'noDecoration'>Soluzioni!</a>";
     psdpButton.style.display = "block";
 }
 
