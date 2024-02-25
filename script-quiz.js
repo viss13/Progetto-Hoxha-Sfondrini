@@ -52,7 +52,43 @@ const questions = [
             { text: "Johan Cruyff", correct: false},
             { text: "Van Basten", correct: false},
         ]
-    }
+    },
+    {
+        question: "Quanti palloni d'oro bisogna avere, ora come ora, per essere sicuri di entrare nella top-10 di giocatoricon più palloni d'oro?",
+        answers: [
+            { text: "Ne bastano 2", correct: false},
+            { text: "Ne basta 1", correct: false},
+            { text: "Almeno 3", correct: true},
+            { text: "Almeno 4", correct: false},
+        ]
+    },
+    {
+        question: "Di che nazionalità è Alfredo Di Stefano?",
+        answers: [
+            { text: "Italiana", correct: false},
+            { text: "Era argentino", correct: false},
+            { text: "Era ispano-argentino", correct: true},
+            { text: "Spagnola", correct: false},
+        ]
+    },
+    {
+        question: "Che club accomuna Ronaldo Nazario e Rummenigge?",
+        answers: [
+            { text: "Hanno entrambi giocato nell'Internazionale", correct: true},
+            { text: "Hanno entrambi giocato per la nazionale francese", correct: false},
+            { text: "Hanno entrambi giocato nel Bayern Monaco", correct: false},
+            { text: "Non hanno giocato nelle stesse squadre", correct: false},
+        ]
+    },
+    {
+        question: "Nella top-10 giocatori con più palloni d'oro c'è solo un difensore quale?",
+        answers: [
+            { text: "Kevin Keegan", correct: false},
+            { text: "Franz Beckenbauer", correct: true},
+            { text: "Marco Van Basten", correct: false},
+            { text: "Nessun difensore nella top-10", correct: false},
+        ]
+    },
 ];
 
 const questionElement = document.getElementById("question");
@@ -118,7 +154,7 @@ function showScore(){
     resetState();
     questionElement.innerHTML = `Hai fatto ${score} su ${questions.
         length}!`;
-    nextButton.innerHTML = "Riprova";
+    nextButton.innerHTML = "Riprova!";
     nextButton.style.display = "block";
     psdpButton.innerHTML = "<a href='psdp.html' class = 'noDecoration'>Soluzioni!</a>";
     psdpButton.style.display = "block";
