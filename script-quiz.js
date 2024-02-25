@@ -58,6 +58,7 @@ const questions = [
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer__button");
 const nextButton = document.getElementById("next__btn");
+const psdpButton = document.getElementById("psdp__btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -65,7 +66,7 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = "Next";
+    nextButton.innerHTML = "Prossima";
     showQuestion();
 }
 
@@ -89,6 +90,7 @@ function showQuestion(){
 
 function resetState(){
     nextButton.style.display = "none";
+    psdpButton.style.display = "none"
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
@@ -118,6 +120,8 @@ function showScore(){
         length}!`;
     nextButton.innerHTML = "Riprova";
     nextButton.style.display = "block";
+    psdpButton.innerHTML = "<a href='psdp.html' class = 'noDecoration'>Per saperne di più</a>";
+    psdpButton.style.display = "block";
 }
 
 
