@@ -147,12 +147,16 @@ h3 {margin-bottom: 0;}
 .card__copy p{color: white;}
 .card__copy h3 {margin-bottom:0; text-align: center;}
 .card__copy h4 {text-align: center;}
-.card--storia{width: 45%; 
+.card--storia{
+    width: 45%; 
     margin: 20px 1.5%; 
     background: black;
     border: 10px solid #c9c9c9;
     border-radius: 8px;
     box-shadow: 10px 25px 30px black;
+    opacity: unset;
+    transition: unset; 
+
 }
 
 .animated {
