@@ -54,7 +54,7 @@ const questions = [
         ]
     },
     {
-        question: "Quanti palloni d'oro bisogna avere, ora come ora, per essere sicuri di entrare nella top-10 di giocatoricon più palloni d'oro?",
+        question: "Quanti palloni d'oro bisogna avere, ora come ora, per essere sicuri di entrare nella top-10 di giocatori con più palloni d'oro?",
         answers: [
             { text: "Ne bastano 2", correct: false},
             { text: "Ne basta 1", correct: false},
