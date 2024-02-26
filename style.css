@@ -61,12 +61,12 @@ nav {display: flex; height: 40px; margin: auto;}
 /* cover */
 
 
-.cover { width:100%; height:70%; position: relative;}
+.cover {width:100%; height:70%; position: relative;}
 .cover_img{width: 100%; height: 100%; }
-.cover__caption{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;}
+.cover__caption{position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; height: 100%; width: 100%;}
 .cover__filter{ background: #000; width:100%; height:100%; position: absolute; z-index: 0; opacity: 0.5; }
-.cover__caption h1{font-size: 100px;}
-.cover__caption h2{font-size: 60px;}
+.cover__caption h1{font-size: 100px; padding: 0; margin: 0; margin-bottom: 10px;}
+.cover__caption h2{font-size: 60px; margin: 0;}
 
 
 
@@ -107,6 +107,15 @@ h3 {margin-bottom: 0;}
     transform: translateY(0); /* Riporta il contenuto nella sua posizione originale */
 }
 
+.titolo_storia{
+    padding: 20px; 
+    background: #222222; 
+    color: #bfa75d; 
+    width: 400px; 
+    margin: 10px auto; 
+    border-radius: 10px; 
+    border: 5px solid #c9c9c9 ;
+}
 
 
 
@@ -118,6 +127,7 @@ h3 {margin-bottom: 0;}
     border: 10px solid #c9c9c9;
     border-radius: 8px;
     box-shadow: 10px 25px 30px black;
+    text-decoration: none;
 }
 
 .card:hover{transform: scale(1.01);}
@@ -295,17 +305,18 @@ main {width: 85%; padding: 10px;}
 
 /* telefono */
 @media (max-width: 767px){
-    .hidden{display: none;}
 
     /* header */
     header{padding: 0;}
     .header__logo1{transform: scale(0.9);}
     .header__logo2{display: none;}
-    .header__tenda{transform: scale(0.7); margin-right: -15px;}
+    nav{margin: auto auto auto 0;}
+    .header__tenda{transform: scale(0.7); margin-right: -10px; width: 100px;}
     .header__tenda__li {transform: scale(0.9); padding: 3px;}
     
     /* Cover */
 	.cover{height:100%;}
+    .cover__caption h1, .cover__caption h2{transform: scale(0.3);}
 
 
     /* Cards */
@@ -317,6 +328,8 @@ main {width: 85%; padding: 10px;}
     .banner {flex-wrap: wrap; margin-bottom: 20px;}
     .banner__img {width: 100%;}
     .banner__copy {width: 100%;}
+
+
 
     
 
