@@ -376,9 +376,10 @@ main {width: 85%; padding: 10px;}
 
     /* text */
     .text__titolo{transform: scale(0.7);}
+    .text__copy{margin: 0;}
 
     /* footer */
-    .sviluppatori__ogg p{transform: scale(0.5);}
+    .sviluppatori__ogg p{transform: scale(0.6);}
     .schede_sv{height: 760px; flex-direction: column;}
     .scheda{width: 80%; margin: 0 auto 30px auto;}
 }
