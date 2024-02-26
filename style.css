@@ -327,7 +327,19 @@ main {width: 85%; padding: 10px;}
     
     /* Cover */
 	.cover{height:100%;}
-    .cover__caption h1, .cover__caption h2{transform: scale(0.3);}
+    .cover__caption {
+        text-align: center; 
+        width: 80%; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        top: 25%;
+    }
+    .cover__caption h1 {
+        font-size: 40px; 
+    }
+    .cover__caption h2 {
+        font-size: 20px; 
+    }
 
 
     /* Cards */
