@@ -135,6 +135,7 @@ h3 {margin-bottom: 0;}
 .card:hover{transform: scale(1.01);}
 
 
+
 .card a{text-decoration: none;}
 .card__block__image{height: 65%; display: flex; align-items: center;}
 .card__image{width:100%; height: auto;}
@@ -164,6 +165,11 @@ h3 {margin-bottom: 0;}
 }
 
 
+
+
+/* footer */
+.home-footer{background-image: url(immagini/sfondo-quiz.png); text-align: unset; margin-top: unset; color: unset; padding: unset;}
+footer{background: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
 .sviluppatori {height: 150px; display: flex; align-items: center;}
 .sviluppatori__ogg{
     background-color: #222; 
@@ -182,7 +188,7 @@ h3 {margin-bottom: 0;}
     margin-bottom: 0; 
     display: flex; 
     flex-wrap: wrap; 
-    justify-content: space-between;
+    justify-content: space-around;
     height: 350px;}
 .scheda{
     width: 43%; 
@@ -194,10 +200,6 @@ h3 {margin-bottom: 0;}
 }
 .flex_center{display: flex; align-items: center; width: 45%; justify-content: center;}
 .scheda__image{width: 98%; height: auto;}
-
-
-
-
 .scheda__copy{
     width: 65%;
     padding:5px 20px; 
@@ -215,14 +217,9 @@ h3 {margin-bottom: 0;}
     margin-bottom: 30px;
 }
 
-/* footer */
-
-.home-footer{background-image: url(immagini/sfondo-quiz.png); text-align: unset; margin-top: unset; color: unset; padding: unset;}
-footer{background: black; text-align: center; margin-top: 20px; color: #bfa75d; padding: 30px;}
-
 .wa_ig_link{display: inline-block; width: 40px; height: 40px;}
-/* banner */
 
+/* banner */
 .banner {
     display: flex; 
     flex-wrap: nowrap; 
@@ -324,8 +321,28 @@ main {width: 85%; padding: 10px;}
 
 
 /* tablet */
-@media (max-width: 998px){
+@media (min-width: 767px) and (max-width: 1024px){
+    /* cards */
+    .cards{justify-content: center;}
+    .card{width: 45%; margin-bottom: 30px;}
+    .card__block__image__lewa{height: 50%;}
+    .card__copy__lewa{height: 45%;}
 
+    /* banner */
+    .banner__img, .banner__copy{width: 50%;}
+    .sidenav{display: none;}
+    main {width: 100%; padding: 20px;}
+    .banner__copy{justify-content: center;}
+    .banner__copy__text{text-align: center;}
+    .banner__copy__text p{display: none;}
+
+    /* cover */
+    .cover__caption h1 {
+        font-size: 60px; 
+    }
+    .cover__caption h2 {
+        font-size: 40px; 
+    }
 }
 
 /* telefono */
@@ -365,6 +382,7 @@ main {width: 85%; padding: 10px;}
     .banner {flex-wrap: wrap; margin-bottom: 20px;}
     .banner__img {width: 100%;}
     .banner__copy {width: 100%;}
+    .banner__copy__text p{display: none;}
 
     #next__btn {
         background: #bfa75d;
@@ -381,16 +399,15 @@ main {width: 85%; padding: 10px;}
     #psdp__btn {width: 120px;}
         
 
-    .titolo_storia{width: 350px}
-
-    .text__copy{transform: scale(0.95);}
+    
 
     .card__block__image__lewa{height: 50%;}
     .card__copy__lewa{height: 45%;}
 
     /* text */
+    .titolo_storia{width: 350px}
     .text__titolo{transform: scale(0.7);}
-    .text__copy{margin: 0;}
+    .text__copy{margin: 0; transform: scale(0.95);}
 
     /* footer */
     .sviluppatori__ogg p{transform: scale(0.6);}
