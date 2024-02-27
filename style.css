@@ -393,4 +393,7 @@ main {width: 85%; padding: 10px;}
     .sviluppatori__ogg p{transform: scale(0.6);}
     .schede_sv{height: 760px; flex-direction: column;}
     .scheda{width: 80%; margin: 0 auto 30px auto;}
+
+    .card{opacity: unset;
+        transition:unset; /* Animazione di transizione */}
 }
