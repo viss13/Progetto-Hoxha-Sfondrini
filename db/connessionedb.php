@@ -4,7 +4,7 @@
 	// $db_username = "root";
 	// $db_password = "";
     // $conn = new mysqli($db_servername,$db_username,$db_password,$db_name);
-    $conn = new mysqli("localhost", "root", "","php");
+    $conn = new mysqli("localhost", "root", "","db_php");
     if($conn->connect_error){
         die("<p>Connessione al server non riuscita: ".$conn->connect_error."</p>");
     }
