@@ -48,7 +48,7 @@
 
         <section class="cards cards-anim">
             <div class="card card1">
-                <a href="pagine/pd2020.html">
+                <a href="pagine/pd2020.php">
                     <div class="card__block__image__lewa">
                         <img class="card__image"src="immagini/lewa.png" alt="">
                     </div>
@@ -76,7 +76,7 @@
                 </a>
             </div>
             <div class="card card3  ">
-                <a href="pagine/quiz.html">
+                <a href="pagine/quiz.php">
                     <div class="card__block__image">
                         <img class="card__image"src="immagini/quiz-img-card.jpeg" alt="">
                     </div>
