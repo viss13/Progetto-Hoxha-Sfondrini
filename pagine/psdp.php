@@ -10,23 +10,9 @@
 </head>
 
 <body class="quiz-background-gold">
-    <header class="w-100">
-        <div class="header__logo1">
-            <img src="../immagini/logo.png" alt="Logo">
-        </div>
-        <nav>
-            <div class="header__tenda">
-                <a href="../index.html" class="header__tenda__li">Home</a>
-            </div> 
-            <div class="header__tenda">
-                <a href="quiz.html" class="header__tenda__li__psdp">Riprova</a>
-            </div>  
-                 
-        </nav>
-        <div class="header__logo2">
-            <img src="../immagini/logo.png" alt="Logo">
-        </div>
-    </header>
+        <?php
+            require('header.php');
+        ?>
 
     <div class="separatore"></div>
     <div class="separatore"></div>

@@ -12,26 +12,9 @@
 <body>
     <div class="page_container">
           
-        <header class="w-100">
-            <div class="header__logo1">
-                <img src="../immagini/logo.png" alt="Logo">
-            </div>
-            <nav>
-                <div class="header__tenda">
-                    <a href="../index.html" class="header__tenda__li">Home</a>
-                </div>
-                <div class="header__tenda">
-                    <a href="giocatori.html" class="header__tenda__li">Vincitori</a>
-                </div>
-                <div class="header__tenda">
-                    <a href="storia.html" class="header__tenda__li">Storia</a>
-                </div>
-                
-            </nav>
-            <div class="header__logo2">
-                <img src="../immagini/logo.png" alt="Logo">
-            </div>
-        </header>
+        <?php
+            require('header.php');
+        ?>
         <div class="separatore"></div>
         
         <section class="cover">
