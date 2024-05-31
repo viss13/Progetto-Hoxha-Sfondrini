@@ -28,10 +28,10 @@ CREATE TABLE IF NOT EXISTS `edizioni` (
   `descrizione` text DEFAULT NULL,
   PRIMARY KEY (`anno`),
   KEY `FK__giocatori` (`id_giocatore`) USING BTREE,
-  CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocarore`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocarore`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella db_php.edizioni: ~10 rows (circa)
+-- Dump dei dati della tabella db_php.edizioni: ~5 rows (circa)
 INSERT INTO `edizioni` (`anno`, `id_giocatore`, `foto`, `squadra`, `descrizione`) VALUES
 	('2013', 2, '2013.jpg', 'Real Madrid', 'Cristiano Ronaldo ha vinto il Pallone d’Oro 2013. Il fuoriclasse portoghese ha trionfato con 1.365 punti, precedendo Lionel Messi (1.205) e Franck Ribery (1.127).'),
 	('2014', 2, '2014.jpg', 'Real Madrid', 'Il Pallone d\'oro FIFA 2014 è stato consegnato il 12 gennaio 2015 a Zurigo a Cristiano Ronaldo. Il calciatore portoghese ha vinto il trofeo per la terza volta nella sua carriera, dopo i successi del 2008 e del 2013.'),
