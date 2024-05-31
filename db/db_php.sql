@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `edizioni` (
   `descrizione` text DEFAULT NULL,
   PRIMARY KEY (`anno`),
   KEY `FK__giocatori` (`id_giocatore`) USING BTREE,
-  CONSTRAINT `FK__giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocarore`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocarore`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella db_php.edizioni: ~10 rows (circa)
