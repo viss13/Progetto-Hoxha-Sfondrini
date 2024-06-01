@@ -26,7 +26,7 @@
                 <?php
                     require('../db/connessionedb.php');
                     $sql = 'SELECT edizioni.foto, edizioni.anno, edizioni.id_giocatore, edizioni.squadra, 
-                                    edizioni.descrizione, giocatori.nome, giocatori.cognome, giocatori.nazionalità
+                                    edizioni.descrizione, giocatori.nome, giocatori.cognome, giocatori.nazionalita
                             FROM edizioni JOIN giocatori ON edizioni.id_giocatore = giocatori.id_giocatore
                             ORDER BY edizioni.anno DESC';
                     
@@ -42,7 +42,7 @@
                         $descrizione = $riga['descrizione'];
                         $nome = $riga['nome'];
                         $cognome = $riga['cognome'];
-                        $nazionalità = $riga['nazionalità'];
+                        $nazionalità = $riga['nazionalita'];
 
                         if($contatore % 2 == 0){
                             echo <<< EOD
@@ -263,13 +263,14 @@
                 <div class="separatore"></div>
                 <?php
                     $sql = 'SELECT anno
-                            FROM vincitori
+                            FROM edizioni
                             ORDER BY anno DESC';
                     $ris = $conn->query($sql) or die ('<p> problema con query </p>');
                     echo '<ul>';
                     foreach($ris as $riga){
-                        echo '<a href="#'$riga'"><li>'$riga'</li></a>';
+                        echo "<a href='#'$riga''><li>'$riga'</li></a>";
                     }
+                    echo'<ul>';
                 ?>
 				<!-- <ul>
 					<a href="#2023"><li>2023</li></a>
