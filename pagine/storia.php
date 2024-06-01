@@ -86,7 +86,43 @@
         <h1 class="titolo_storia">Top 10 Vincitori</h1>
 
         <section class="cards">
-            <a href="../pagine-giocatori/messi.html" class="card card--storia">
+            <?php
+                require('../db/connessionedb.php');
+                $sql = "SELECT id_giocatore, nome, cognome, banner, vittorie
+                        FROM giocatori 
+                        ORDER BY vittorie DESC
+                        LIMIT 10";
+                
+                $ris = $conn->query($sql) or die ('<p> problema con query </p>');
+
+                if($ris->num_rows == 0){
+                    echo "nessun risultato";
+                }else{
+                    $contatore = 1;
+
+                    foreach($ris as $riga){
+                        $nome = $riga['nome'];
+                        $cognome = $riga['cognome'];
+                        $id_giocatore = $riga['id_giocatore'];
+                        $banner = $riga['banner'];
+                        $vittorie = $riga['vittorie'];
+                        echo <<<EOD
+                            <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="card card--storia">
+                                <img class="card__image"src="../immagini/$banner" alt="$banner">
+                                <div class="card__copy">
+                                    <h2>$contatore</h2>
+                                    <h3>$nome $cognome</h3>
+                                    <h4>$vittorie palloni d'oro</h4>
+                                </div>
+                            </a>
+                            EOD;
+
+
+                        $contatore++;
+                    }
+                }
+            ?>
+            <!-- <a href="../pagine-giocatori/messi.html" class="card card--storia">
                 <img class="card__image"src="../immagini/2023.jpg" alt="">
                 <div class="card__copy">
                     <h2>1°</h2>
@@ -175,12 +211,12 @@
                     <h3>Karl-Heinz Rummenigge</h3>
                     <h4>2 Palloni d'oro</h4>
                 </div>
-            </a>
+            </a> -->
             
         </section>
        
     
-        <footer>Progetto fatto da Visar Hoxha e Diego Sfondrini</footer>
+        <?php require("footer.php")?>
 
 
     </div>

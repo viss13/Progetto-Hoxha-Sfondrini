@@ -56,7 +56,7 @@
             </div>
         </section>
     
-        <footer>Progetto fatto da Visar Hoxha e Diego Sfondrini</footer>
+        <?php require("footer.php")?>
 
 
     </div>
