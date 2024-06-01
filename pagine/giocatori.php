@@ -16,7 +16,7 @@
         <?php
             require('header.php');
         ?>
-        <div class="separatore"></div>
+        <div style = 'height: 50px;'></div>
         
 
         <div class="centro-flex">
@@ -268,7 +268,8 @@
                     $ris = $conn->query($sql) or die ('<p> problema con query </p>');
                     echo '<ul>';
                     foreach($ris as $riga){
-                        echo "<a href='#'$riga''><li>'$riga'</li></a>";
+                        $anno = $riga['anno'];
+                        echo "<a href='#$anno'><li>$anno</li></a>";
                     }
                     echo'<ul>';
                 ?>
