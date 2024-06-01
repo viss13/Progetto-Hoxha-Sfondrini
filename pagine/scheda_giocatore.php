@@ -43,7 +43,7 @@
                 <h1><?php echo "$nome $cognome"?></h1>
                 <h2><?php echo "$soprannome"?></h2>
 		    </div>
-            <img src="../immagini/keegan2.jpg" alt="" class="cover_img">
+           <?php echo "<img src='../immagini/$copertina' alt='$copertina' class='cover_img'>" ?> 
         </section>
 
         <section class="text hidden-content">
