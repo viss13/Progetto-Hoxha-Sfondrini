@@ -21,28 +21,29 @@ USE `db_php`;
 
 -- Dump della struttura di tabella db_php.edizioni
 CREATE TABLE IF NOT EXISTS `edizioni` (
-  `anno` char(50) NOT NULL,
+  `cod_edizione` int(11) NOT NULL AUTO_INCREMENT,
+  `anno` char(50) DEFAULT NULL,
   `id_giocatore` int(11) DEFAULT NULL,
   `foto` char(50) DEFAULT NULL,
   `squadra` varchar(50) DEFAULT NULL,
   `descrizione` text DEFAULT NULL,
-  PRIMARY KEY (`anno`),
+  PRIMARY KEY (`cod_edizione`),
   KEY `FK_edizioni_giocatori` (`id_giocatore`),
   CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocatore`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella db_php.edizioni: ~10 rows (circa)
-INSERT INTO `edizioni` (`anno`, `id_giocatore`, `foto`, `squadra`, `descrizione`) VALUES
-	('2013', 2, '2013.jpg', 'Real Madrid', 'Cristiano Ronaldo ha vinto il Pallone d’Oro 2013. Il fuoriclasse portoghese ha trionfato con 1.365 punti, precedendo Lionel Messi (1.205) e Franck Ribery (1.127).'),
-	('2014', 2, '2014.jpg', 'Real Madrid', 'Il Pallone d\'oro FIFA 2014 è stato consegnato il 12 gennaio 2015 a Zurigo a Cristiano Ronaldo. Il calciatore portoghese ha vinto il trofeo per la terza volta nella sua carriera, dopo i successi del 2008 e del 2013.'),
-	('2015', 1, '2015.jpg', 'Barcellona', 'Per l’argentino del Barcellona si tratta del quinto trionfo della sua straordinaria carriera: sul podio, con lui, CR7, portoghese del Real Madrid, e Neymar, funambolo brasiliano compagno di squadra proprio di Messi al Barcellona. Queste le percentuali di voto: Messi 41.33 %, Ronaldo 27.76 %, Neymar 7.86 %.'),
-	('2016', 2, '2016.webp', 'Real Madrid', 'Cristiano Ronaldo a trionfare per la quarta volta, dietro di lui Lionel Messi ed Antoine Griezmann. Erano trenta i giocatori in lizza per il Pallone d\'Oro 2016, tra questi anche Gigi Buffon, unico italiano e nono nella classifica finale.'),
-	('2017', 2, '2017.avif', 'Real Madrid', 'Come da pronostico Cristiano Ronaldo ha vinto il Pallone d’oro 2017. Si tratta del secondo consecutivo, il 5° in carriera per l’attaccante portoghese che eguaglia il primato di Leo Messi.'),
-	('2018', 4, '2018.jpg', 'Real Madrid', 'Il 33enne centrocampista croato, campione d\'Europa con il Real Madrid e vicecampione del mondo con la Croazia, si aggiudica l\'ambito trofeo che dal 2008 in poi aveva avuto solo due padroni: Ronaldo e Messi.'),
-	('2019', 1, '2019.webp', 'Barcellona', 'Lionel Messi ha vinto il Pallone d’Oro 2019, precedendo Van Dijk e Cristiano Ronaldo. Per il campione del Barcellona, premiato nel corso della cerimonia al Theatre du Chatelet di Parigi, si tratta del sesto Pallone d\'Oro in carriera'),
-	('2021', 1, '2021.webp', 'Barcellona', 'Il Pallone d\'oro 2021 è stato consegnato il 29 novembre 2021 a Parigi ed è stato vinto da Lionel Messi, al settimo successo nella storia del riconoscimento. La pulce sorprende nuovamente tutti.'),
-	('2022', 3, '2022.png', 'Real Madrid', 'Karim Benzema si aggiudica l\'edizione 2022 del Pallone d\'Oro. Come ampiamente previsto, il bomber del Real Madrid ha sbaragliato la concorrenza, ricevendo l\'ambito trofeo direttamente dalle mani di Zinedine Zidane, l\'ultimo in Francia ad aver vinto il titolo nel 1998. Una grande rivincita per l\'attaccante francese di origini algerine, diventato in poco più di un anno un vero re del calcio mondiale.'),
-	('2023', 1, '2023.jpg', 'Inter Miami', 'Leo Messi (campione del mondo 2022 con l\'Argentina) ha ottenuto il suo ottavo riconoscimento come miglior giocatore della stagione. L\'argentino ha superato Erling Haaland (protagonista del treble Premier-FA Cup-Champions con il City) e Kylian Mbappé (finalista nel Mondiale 2022 e campione di Francia con il Psg).');
+INSERT INTO `edizioni` (`cod_edizione`, `anno`, `id_giocatore`, `foto`, `squadra`, `descrizione`) VALUES
+	(1, '2013', 2, '2013.jpg', 'Real Madrid', 'Cristiano Ronaldo ha vinto il Pallone d’Oro 2013. Il fuoriclasse portoghese ha trionfato con 1.365 punti, precedendo Lionel Messi (1.205) e Franck Ribery (1.127).'),
+	(2, '2014', 2, '2014.jpg', 'Real Madrid', 'Il Pallone d\'oro FIFA 2014 è stato consegnato il 12 gennaio 2015 a Zurigo a Cristiano Ronaldo. Il calciatore portoghese ha vinto il trofeo per la terza volta nella sua carriera, dopo i successi del 2008 e del 2013.'),
+	(3, '2015', 1, '2015.jpg', 'Barcellona', 'Per l’argentino del Barcellona si tratta del quinto trionfo della sua straordinaria carriera: sul podio, con lui, CR7, portoghese del Real Madrid, e Neymar, funambolo brasiliano compagno di squadra proprio di Messi al Barcellona. Queste le percentuali di voto: Messi 41.33 %, Ronaldo 27.76 %, Neymar 7.86 %.'),
+	(4, '2016', 2, '2016.webp', 'Real Madrid', 'Cristiano Ronaldo a trionfare per la quarta volta, dietro di lui Lionel Messi ed Antoine Griezmann. Erano trenta i giocatori in lizza per il Pallone d\'Oro 2016, tra questi anche Gigi Buffon, unico italiano e nono nella classifica finale.'),
+	(5, '2017', 2, '2017.avif', 'Real Madrid', 'Come da pronostico Cristiano Ronaldo ha vinto il Pallone d’oro 2017. Si tratta del secondo consecutivo, il 5° in carriera per l’attaccante portoghese che eguaglia il primato di Leo Messi.'),
+	(6, '2018', 4, '2018.jpg', 'Real Madrid', 'Il 33enne centrocampista croato, campione d\'Europa con il Real Madrid e vicecampione del mondo con la Croazia, si aggiudica l\'ambito trofeo che dal 2008 in poi aveva avuto solo due padroni: Ronaldo e Messi.'),
+	(7, '2019', 1, '2019.webp', 'Barcellona', 'Lionel Messi ha vinto il Pallone d’Oro 2019, precedendo Van Dijk e Cristiano Ronaldo. Per il campione del Barcellona, premiato nel corso della cerimonia al Theatre du Chatelet di Parigi, si tratta del sesto Pallone d\'Oro in carriera'),
+	(8, '2021', 1, '2021.webp', 'Barcellona', 'Il Pallone d\'oro 2021 è stato consegnato il 29 novembre 2021 a Parigi ed è stato vinto da Lionel Messi, al settimo successo nella storia del riconoscimento. La pulce sorprende nuovamente tutti.'),
+	(9, '2022', 3, '2022.png', 'Real Madrid', 'Karim Benzema si aggiudica l\'edizione 2022 del Pallone d\'Oro. Come ampiamente previsto, il bomber del Real Madrid ha sbaragliato la concorrenza, ricevendo l\'ambito trofeo direttamente dalle mani di Zinedine Zidane, l\'ultimo in Francia ad aver vinto il titolo nel 1998. Una grande rivincita per l\'attaccante francese di origini algerine, diventato in poco più di un anno un vero re del calcio mondiale.'),
+	(10, '2023', 1, '2023.jpg', 'Inter Miami', 'Leo Messi (campione del mondo 2022 con l\'Argentina) ha ottenuto il suo ottavo riconoscimento come miglior giocatore della stagione. L\'argentino ha superato Erling Haaland (protagonista del treble Premier-FA Cup-Champions con il City) e Kylian Mbappé (finalista nel Mondiale 2022 e campione di Francia con il Psg).');
 
 -- Dump della struttura di tabella db_php.giocatori
 CREATE TABLE IF NOT EXISTS `giocatori` (
