@@ -47,8 +47,8 @@
                         if($contatore % 2 == 0){
                             echo <<< EOD
                             <section class="banner" id="$anno">
-                                <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
-                                    
+                                <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="banner__img">
+                                    <div class="banner__img__filter"></div>
                                     <img src="../immagini/$foto" alt="">
                                 </a>
                                 <div class="banner__copy">
@@ -77,8 +77,8 @@
                                         </p>
                                     </div>
                                 </div>
-                                <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
-                                    
+                                <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="banner__img">
+                                    <div class="banner__img__filter"></div>
                                     <img src="../immagini/$foto" alt="">
                                 </a>
                             </section>
