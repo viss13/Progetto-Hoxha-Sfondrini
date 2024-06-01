@@ -16,7 +16,7 @@
         <?php
             require('header.php');
         ?>
-        <div class="separatore"></div>
+        <div style = 'height: 50px;'></div>
         
 
         <div class="centro-flex">
@@ -48,7 +48,7 @@
                             echo <<< EOD
                             <section class="banner" id="$anno">
                                 <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
-                                    <div class="banner__img__filter"></div>
+                                    
                                     <img src="../immagini/$foto" alt="">
                                 </a>
                                 <div class="banner__copy">
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                                 <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
-                                    <div class="banner__img__filter"></div>
+                                    
                                     <img src="../immagini/$foto" alt="">
                                 </a>
                             </section>
@@ -268,7 +268,8 @@
                     $ris = $conn->query($sql) or die ('<p> problema con query </p>');
                     echo '<ul>';
                     foreach($ris as $riga){
-                        echo "<a href='#'$riga''><li>'$riga'</li></a>";
+                        $anno = $riga['anno'];
+                        echo "<a href='#$anno'><li>$anno</li></a>";
                     }
                     echo'<ul>';
                 ?>
