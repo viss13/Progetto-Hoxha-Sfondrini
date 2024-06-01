@@ -3,7 +3,7 @@
         die("Errore! manca un parametro essenziale per il caricamento della pagina!");
     } else {
         $id_giocatore = $_GET["id_giocatore"];
-        require("../data/connessionedb.php");
+        require("../db/connessionedb.php");
         $sql = "SELECT giocatori.nome, giocatori.cognome, giocatori.testo, giocatori.copertina, giocatori.soprannome 
                 FROM giocatori
                 WHERE id_giocatore=$id_giocatore"; 
@@ -14,7 +14,6 @@
         } else {
             $riga = $ris->fetch_assoc();
             $testo = $riga['testo'];
-            $descrizione_txt = $riga['descrizione_txt'];
             $nome = $riga["nome"];
             $cognome = $riga["cognome"];
             $copertina = $riga["copertina"];
@@ -34,7 +33,7 @@
 	<link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-	<?php require("nav.php");?>
+	<?php require("header.php");?>
 	<div class="separatore"></div>
         
         <section class="cover">
@@ -48,22 +47,12 @@
 
         <section class="text hidden-content">
             <div class="text__copy">
-                <h1 class="text__titolo">Striker</h1>
-                <p class="spaziatura_p">
-                    Joseph Kevin Keegan, noto semplicemente come Kevin Keegan, (in inglese: 'kɛvɪn 'ki:gan; Armthorpe, 14 febbraio 1951) è un ex allenatore 
-                    di calcio ed ex calciatore inglese, di ruolo attaccante.
-                    Considerato come uno dei più forti calciatori inglesi della storia del calcio, occupa la 56ª posizione nella speciale classifica 
-                    dei migliori calciatori del XX secolo pubblicata dalla rivista World Soccer e la 38ª posizione nell'omonima classifica stilata dall'IFFHS. 
-                    Nel marzo del 2004, Pelé lo ha anche inserito nella FIFA 100, la lista dei 125 migliori calciatori viventi, redatta in occasione del Centenario 
-                    della FIFA. Vincitore del Pallone d'oro per due anni di seguito (1978 e 1979), è stato inserito in totale per quattro volte tra i 
-                    candidati alla vittoria del premio arrivando a raggiungere anche la seconda posizione nel 1977.
-                    Ha raggiunto i maggiori successi negli anni in cui militò nel Liverpool, vincendo, tra il resto, tre volte il campionato inglese, 
-                    due volte la Coppa Uefa ed una volta la Coppa dei Campioni. Militò inoltre anche nell'Amburgo, dove vinse un campionato tedesco.
-                </p>
-                <h2>Biografia</h2>
-                <p class="spaziatura_p">
-                    All'età di ventitré anni, il 23 settembre 1974 si è sposato con Jean, da cui ha avuto le figlie Laura e Sarah.
-                </p>
+                <?php 
+                    $paragrafi = explode("\n", $testo);
+                    foreach ($paragrafi as $paragrafo) {
+                        echo "<p>$paragrafo</p>";
+                    }
+                ?>
             </div>
         </section>
     
