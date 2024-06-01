@@ -23,27 +23,75 @@
             
             <main>
 
-                <section class="banner" id="2023">
-                    <a href="../pagine-giocatori/messi.html" class="banner__img">
-                        <div class="banner__img__filter"></div>
-                        <img src="../immagini/2023.jpg" alt="">
-                    </a>
-                    <div class="banner__copy">
-                        <div class="banner__copy__text">
-                            <h3>2023</h3>
-                            <h4>Lionel Messi</h4>
-                            <h5>Inter Miami / Argentina</h5>
-                            <p class="spaziatura_p">
-                                Leo Messi (campione del mondo 2022 con l'Argentina) ha ottenuto il suo ottavo
-                                 riconoscimento come miglior giocatore della stagione. L'argentino ha superato Erling
-                                  Haaland (protagonista del treble Premier-FA Cup-Champions con il City) e Kylian Mbappé 
-                                  (finalista nel Mondiale 2022 e campione di Francia con il Psg).
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                <?php
+                    require('../db/connessionedb.php');
+                    $sql = 'SELECT edizioni.foto, edizioni.anno, edizioni.id_giocatore, edizioni.squadra, 
+                                    edizioni.descrizione, giocatori.nome, giocatori.cognome, giocatori.nazionalità
+                            FROM edizioni JOIN giocatori ON edizioni.id_giocatore = giocatori.id_giocatore
+                            ORDER BY edizioni.anno DESC';
+                    
+                    $ris = $conn->query($sql) or die ('<p> problema con query </p>');
+                    $contatore = 0;
 
-                <section class="banner" id="2022">
+
+                    foreach($ris as $riga){
+                        $foto = $riga['foto'];
+                        $anno = $riga['anno'];
+                        $id_giocatore = $riga['id_giocatore'];
+                        $squadra = $riga['squadra'];
+                        $descrizione = $riga['descrizione'];
+                        $nome = $riga['nome'];
+                        $cognome = $riga['cognome'];
+                        $nazionalità = $riga['nazionalità'];
+
+                        if($contatore % 2 == 0){
+                            echo <<< EOD
+                            <section class="banner" id="$anno">
+                                <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
+                                    <div class="banner__img__filter"></div>
+                                    <img src="../immagini/$foto" alt="">
+                                </a>
+                                <div class="banner__copy">
+                                    <div class="banner__copy__text">
+                                        <h3>$anno</h3>
+                                        <h4>$cognome $nome</h4>
+                                        <h5>$squadra / $nazionalità</h5>
+                                        <p class="spaziatura_p">
+                                            $descrizione
+                                        </p>
+                                    </div>
+                                </div>  
+                            </section>       
+                            EOD;
+                        }
+                        else{
+                            echo <<< EOD
+                            <section class="banner" id="$anno">
+                                <div class="banner__copy">
+                                    <div class="banner__copy__text">
+                                        <h3>$anno</h3>
+                                        <h4>$cognome $nome</h4>
+                                        <h5>$squadra / $nazionalità</h5>
+                                        <p class="spaziatura_p">
+                                            $descrizione
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="scheda_giocatore.php?id_giocatore = $id_giocatore" class="banner__img">
+                                    <div class="banner__img__filter"></div>
+                                    <img src="../immagini/$foto" alt="">
+                                </a>
+                            </section>
+                            EOD;
+                        }
+                        $contatore ++;
+                    }
+                ?>
+
+
+                
+
+                <!-- <section class="banner" id="2022">
                     <div class="banner__copy">
                         <div class="banner__copy__text">
                             <h3>2022</h3>
@@ -206,14 +254,24 @@
                     <a href="../pagine-giocatori/ronaldo.html" class="banner__img">
                         <img src="../immagini/2013.jpg" alt="">
                     </a>
-                </section>
+                </section> -->
                 
             </main>
 
             <div class="sidenav">
 				<h2 class="sidenav__titolo">Vincitori</h2>
                 <div class="separatore"></div>
-				<ul>
+                <?php
+                    $sql = 'SELECT anno
+                            FROM vincitori
+                            ORDER BY anno DESC';
+                    $ris = $conn->query($sql) or die ('<p> problema con query </p>');
+                    echo '<ul>';
+                    foreach($ris as $riga){
+                        echo '<a href="#'$riga'"><li>'$riga'</li></a>';
+                    }
+                ?>
+				<!-- <ul>
 					<a href="#2023"><li>2023</li></a>
 					<a href="#2022"><li>2022</li></a>
 					<a href="#2021"><li>2021</li></a>
@@ -223,12 +281,14 @@
                     <a href="#2015"><li>2015</li></a>
                     <a href="#2014"><li>2014</li></a>
                     <a href="#2013"><li>2013</li></a>
-				</ul>
+				</ul> -->
 			</div>
 
         </div>
 
-        <footer>Progetto fatto da Visar Hoxha e Diego Sfondrini</footer>
+        <?php
+            require('footer.php');
+        ?>
     </div>
     
 </body>
