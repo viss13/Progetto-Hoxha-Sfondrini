@@ -15,11 +15,16 @@
     <?php
         require("header.php");
     ?>
-    <div class="page_container">
+    <?php
+        session_start();
+        if(!isset($_SESSION['username'])){
+            echo <<< EOD
+            <div class="page_container">
         <div class="separatore"></div>
+        <div style = "height: 30px;"></div>
 		<h1 class="titolo_storia">Pagina di Login</h1>
 
-        <form action="" method="post">
+        <form action="" method="post" style="margin-top: 40px;">
             <table class="tab_input">
                 <tr>
                     <td><label for="username">Username: </label></td>
@@ -30,7 +35,10 @@
                     <td><input type="password" name="password" id="password" required></td>
                 </tr>
             </table>
-            <input clatype="submit" value="Accedi">
+            <div style = "display: flex; justify-content: center; margin-top: 40px;">
+                <input type="submit" value="Accedi">
+            </div>
+            
         </form>
         <?php
             if (isset($_POST["username"]) and isset($_POST["password"])) {
@@ -44,7 +52,7 @@
                 $ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
 
                 if ($ris->num_rows == 0) {
-                    echo "<p>Utente o password non trovati.</p>";
+                    echo "<p style='text-align: center; font-size: 30px;'>Utente o password non trovati.</p>";
                     $conn->close();
                 } else {
                     session_start();
@@ -56,9 +64,21 @@
             }
         ?>
     </div>
-    <?php 
+    <div class="separatore"></div>
+    <div class="separatore"></div>
+    EOD;
+        }
+        else{
+            echo <<<EOD
+            <a href="logout.php"><h1 class="titolo_storia">LOGOUT</h1></a>
+            EOD;
+        }
+    ?>
+    
+    
+</body>
+<?php 
         require('footer.php');
     ?>	
-</body>
 </html>
 

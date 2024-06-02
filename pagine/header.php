@@ -17,7 +17,10 @@
                 </div>
                 
             </nav>
-            <div class="header__logo2">
+            <div class="header__logo2">         
+                <div class = "header__logo2__login">
+                    <a href="pagine/login.php"><img src="immagini/login3.png" alt=""></a>
+                </div>
                 <img src="immagini/logo.png" alt="Logo">
             </div>
         </header>
@@ -59,6 +62,9 @@
                 
             </nav>
             <div class="header__logo2">
+            <div class = "header__logo2__login">
+                <a href="login.php"><img src="../immagini/login3.png" alt=""></a>
+            </div>
                 <img src="../immagini/logo.png" alt="Logo">
             </div>
         </header>
