@@ -2,7 +2,6 @@
 
 html, body{padding: 0; margin: 0; height: 100%;}
 .page_container{ margin: auto;}
-
 .page_container h1{padding-top: 20px;}
 .w-100{width: 100%;}
 body{background-image: url(immagini/sfondo-quiz-oro.png); font-family: Arial, Helvetica, sans-serif;}
