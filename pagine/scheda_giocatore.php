@@ -1,7 +1,8 @@
 <?php
 	session_start();
     if(!isset($_SESSION['username'])){ 
-		header('location: login.php');
+        echo "devi essere loggato per vedere questa pagina, sarai reindirizzato in 5 secondiels";
+		header('Refresh: 5; URL=login.php');
 	}
     $username = $_SESSION["username"];
 
