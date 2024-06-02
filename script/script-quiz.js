@@ -156,7 +156,7 @@ function showScore(){
         length}!`;
     nextButton.innerHTML = "Riprova!";
     nextButton.style.display = "block";
-    psdpButton.innerHTML = "<a href='psdp.html' class = 'noDecoration'>Soluzioni!</a>";
+    psdpButton.innerHTML = "<a href='psdp.php' class = 'noDecoration'>Soluzioni!</a>";
     psdpButton.style.display = "block";
 }
 

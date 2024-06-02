@@ -26,7 +26,7 @@
             </div>
             <div class="simply__flex">
                 <button id="next__btn">Prossima</button>
-                <button id="psdp__btn"><a href="psdp.html">Per saperne di più</a>psdp</button>
+                <button id="psdp__btn"><a href="psdp.php">Per saperne di più</a>psdp</button>
             </div>
         </div>
     </div>
