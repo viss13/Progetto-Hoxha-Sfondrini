@@ -1,4 +1,10 @@
 <?php
+	session_start();
+    if(!isset($_SESSION['username'])){ 
+		header('location: login.php');
+	}
+    $username = $_SESSION["username"];
+
     if (!isset($_GET["id_giocatore"])) {
         die("Errore! manca un parametro essenziale per il caricamento della pagina!");
     } else {

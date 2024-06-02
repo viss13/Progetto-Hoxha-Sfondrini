@@ -164,6 +164,30 @@ h3 {margin-bottom: 0;}
     opacity: 1;
 }
 
+/* login */
+#tab_dati_personali{
+	/* width: 500px; */
+	text-align: left;
+	margin: auto;
+}
+.tab_input{
+    background-color: #222;
+    color: #bfa75d;
+	text-align: left;
+	margin: auto;
+    padding: 20px;
+    border: 7px solid #c9c9c9;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px black;
+}
+.input_dati_personali{
+	width: 300px;
+}
+input{
+	font-family: 'Open Sans', Verdana, 'DejaVu Sans', Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
 
 
 
