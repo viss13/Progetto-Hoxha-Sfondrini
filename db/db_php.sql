@@ -14,35 +14,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
 -- Dump della struttura del database db_php
 CREATE DATABASE IF NOT EXISTS `db_php` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `db_php`;
-
--- Dump della struttura di tabella db_php.edizioni
-CREATE TABLE IF NOT EXISTS `edizioni` (
-  `anno` char(50) NOT NULL,
-  `id_giocatore` int(11) DEFAULT NULL,
-  `foto` char(50) DEFAULT NULL,
-  `squadra` varchar(50) DEFAULT NULL,
-  `descrizione` text DEFAULT NULL,
-  PRIMARY KEY (`anno`),
-  KEY `FK_edizioni_giocatori` (`id_giocatore`),
-  CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocatore`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Dump dei dati della tabella db_php.edizioni: ~10 rows (circa)
-INSERT INTO `edizioni` (`anno`, `id_giocatore`, `foto`, `squadra`, `descrizione`) VALUES
-	('2013', 2, '2013.jpg', 'Real Madrid', 'Cristiano Ronaldo ha vinto il Pallone d’Oro 2013. Il fuoriclasse portoghese ha trionfato con 1.365 punti, precedendo Lionel Messi (1.205) e Franck Ribery (1.127).'),
-	('2014', 2, '2014.jpg', 'Real Madrid', 'Il Pallone d\'oro FIFA 2014 è stato consegnato il 12 gennaio 2015 a Zurigo a Cristiano Ronaldo. Il calciatore portoghese ha vinto il trofeo per la terza volta nella sua carriera, dopo i successi del 2008 e del 2013.'),
-	('2015', 1, '2015.jpg', 'Barcellona', 'Per l’argentino del Barcellona si tratta del quinto trionfo della sua straordinaria carriera: sul podio, con lui, CR7, portoghese del Real Madrid, e Neymar, funambolo brasiliano compagno di squadra proprio di Messi al Barcellona. Queste le percentuali di voto: Messi 41.33 %, Ronaldo 27.76 %, Neymar 7.86 %.'),
-	('2016', 2, '2016.webp', 'Real Madrid', 'Cristiano Ronaldo a trionfare per la quarta volta, dietro di lui Lionel Messi ed Antoine Griezmann. Erano trenta i giocatori in lizza per il Pallone d\'Oro 2016, tra questi anche Gigi Buffon, unico italiano e nono nella classifica finale.'),
-	('2017', 2, '2017.avif', 'Real Madrid', 'Come da pronostico Cristiano Ronaldo ha vinto il Pallone d’oro 2017. Si tratta del secondo consecutivo, il 5° in carriera per l’attaccante portoghese che eguaglia il primato di Leo Messi.'),
-	('2018', 4, '2018.jpg', 'Real Madrid', 'Il 33enne centrocampista croato, campione d\'Europa con il Real Madrid e vicecampione del mondo con la Croazia, si aggiudica l\'ambito trofeo che dal 2008 in poi aveva avuto solo due padroni: Ronaldo e Messi.'),
-	('2019', 1, '2019.webp', 'Barcellona', 'Lionel Messi ha vinto il Pallone d’Oro 2019, precedendo Van Dijk e Cristiano Ronaldo. Per il campione del Barcellona, premiato nel corso della cerimonia al Theatre du Chatelet di Parigi, si tratta del sesto Pallone d\'Oro in carriera'),
-	('2021', 1, '2021.webp', 'Barcellona', 'Il Pallone d\'oro 2021 è stato consegnato il 29 novembre 2021 a Parigi ed è stato vinto da Lionel Messi, al settimo successo nella storia del riconoscimento. La pulce sorprende nuovamente tutti.'),
-	('2022', 3, '2022.png', 'Real Madrid', 'Karim Benzema si aggiudica l\'edizione 2022 del Pallone d\'Oro. Come ampiamente previsto, il bomber del Real Madrid ha sbaragliato la concorrenza, ricevendo l\'ambito trofeo direttamente dalle mani di Zinedine Zidane, l\'ultimo in Francia ad aver vinto il titolo nel 1998. Una grande rivincita per l\'attaccante francese di origini algerine, diventato in poco più di un anno un vero re del calcio mondiale.'),
-	('2023', 1, '2023.jpg', 'Inter Miami', 'Leo Messi (campione del mondo 2022 con l\'Argentina) ha ottenuto il suo ottavo riconoscimento come miglior giocatore della stagione. L\'argentino ha superato Erling Haaland (protagonista del treble Premier-FA Cup-Champions con il City) e Kylian Mbappé (finalista nel Mondiale 2022 e campione di Francia con il Psg).');
 
 -- Dump della struttura di tabella db_php.giocatori
 CREATE TABLE IF NOT EXISTS `giocatori` (
@@ -74,16 +48,60 @@ INSERT INTO `giocatori` (`id_giocatore`, `nome`, `cognome`, `testo`, `copertina`
 	(11, 'Karl-Heinz', 'Rumenigge', 'Karl-Heinz Rummenigge (Lippstadt, 25 settembre 1955) è un dirigente sportivo ed ex calciatore tedesco, di ruolo attaccante, attuale membro del consiglio direttivo del Bayern Monaco. Con la Germania Ovest è stato campione d\'Europa nel 1980 e vicecampione del mondo nel 1982 e nel 1986. Soprannominato Kalle, è considerato uno dei più forti attaccanti della storia del calcio nonché come il migliore in assoluto durante la prima metà degli anni 1980. Occupa la 35ª posizione sia nella speciale classifica dei migliori calciatori del XX secolo pubblicata dalla rivista World Soccer che nell\'omonima classifica stilata dall\'IFFHS. Nel marzo del 2004, Pelé lo ha anche inserito nella FIFA 100, la lista dei 125 migliori calciatori viventi, redatta in occasione del Centenario della FIFA. Vincitore del Pallone d\'oro per due anni di seguito (1980 e 1981), è stato inserito in totale per otto anni di fila tra i candidati alla vittoria del premio arrivando a raggiungere anche la seconda posizione nel 1979. Nel 2022 è stato inoltre inserito nella Hall of Fame del calcio italiano.\r\nHa legato il suo nome a quello del Bayern Monaco, nel quale ha militato dal 1974 al 1984. Con la maglia dei bavaresi ha collezionato in totale 422 presenze e 217 reti, vincendo due campionati tedeschi, due Coppe nazionali, due Coppe dei Campioni e una Coppa Intercontinentale. Nel 1984 viene acquistato dall\'Inter, dove rimane fino al 1987, periodo in cui viene, per assonanza con il nome e doti sportive, soprannominato Il Kaiser ("imperatore" in tedesco). Ha chiuso la carriera nel 1989 tra le file del Servette. A livello individuale è stato inoltre per tre volte capocannoniere della Bundesliga[9] e per una volta della Coppa dei Campioni.Convocato in nazionale dal 1975 al 1986, ha partecipato a tre edizioni del campionato mondiale (Argentina 1978, Spagna 1982 e Messico 1986) e a due del campionato europeo (Italia 1980 e Francia 1984), vincendo l\'Europeo 1980. In nazionale ha giocato complessivamente 95 partite, segnando 45 reti.\r\nDopo il ritiro dall\'attività agonistica, è tornato al Bayern Monaco per intraprendere la carriera dirigenziale dapprima in veste di vicepresidente (dal 1991 al 2002) e in seguito in quella di amministratore delegato (fino al 2021). È stato presidente dell\'associazione dei club europei (ECA) dal 2008 al 2017 per poi diventarne il presidente onorario.', 'rummenigge2.jpg', 'rummenigge.png', 2, 'Der Kalle', NULL, NULL),
 	(12, 'Johan', 'Cruyff', 'Johan Cruijff, all\'anagrafe Hendrik Johannes Cruijff (in olandese: [joːˈhɑn krœʏ̯f][2][3]; Amsterdam, 25 aprile 1947 – Barcellona, 24 marzo 2016), è stato un calciatore, allenatore di calcio e dirigente sportivo olandese, di ruolo attaccante o centrocampista.Considerato uno dei migliori giocatori nella storia del calcio, fu l\'interprete più emblematico del calcio totale con cui l\'Ajax e i Paesi Bassi di Rinus Michels rivoluzionarono la storia della disciplina tra la seconda metà degli anni 1960 e la prima metà degli anni 1970. Nel suo palmarès può vantare nove campionati olandesi, sei Coppe dei Paesi Bassi, un campionato spagnolo, una Coppa di Spagna, tre Coppe dei Campioni, una Supercoppa UEFA e una Coppa Intercontinentale. \r\nCon la nazionale olandese è stato finalista al campionato del mondo 1974 e terzo classificato al campionato d\'Europa 1976. Fra nazionale e squadre di club, segnò da professionista 402 gol in 716 partite ufficiali.\r\nNel corso della carriera ricevette vari soprannomi, tra cui Profeta del gol, che ispirò il titolo del film-documentario sulla vita sportiva di Cruijff diretto da Sandro Ciotti; il giornalista Gianni Brera lo ribattezzò invece il Pelé bianco.\r\nVincitore di tre Palloni d\'oro assegnati dalla rivista francese France Football (1971, 1973 e 1974.), occupa la 3ª posizione nella speciale classifica dei migliori calciatori del XX secolo pubblicata dalla rivista World Soccer alle spalle di Pelè e Maradona. Nel 2000 invece viene eletto secondo miglior calciatore del XX secolo, dietro al solo Pelé, nella classifica stilata dall\'IFFHS mentre nel mese di novembre del 2003, venne insignito del titolo onorifico di Golden Player dei Paesi Bassi come miglior giocatore olandese dell\'ultimo mezzo secolo (1954-2003). Nel marzo del 2004, Pelé lo ha anche inserito nella FIFA 100, la lista dei 125 migliori calciatori viventi, redatta in occasione del Centenario della FIFA.\r\nDa allenatore ha vinto due Coppe dei Paesi Bassi, una Coppa di Spagna, quattro campionati spagnoli, tre Supercoppe di Spagna, due Coppe delle Coppe, una Coppa dei Campioni e una Supercoppa UEFA. È uno dei sette allenatori che si sono aggiudicati la Coppa dei Campioni/Champions League dopo averla vinta da giocatore: detiene il record con Miguel Muñoz, Giovanni Trapattoni, Josep Guardiola, Frank Rijkaard, Carlo Ancelotti e Zinédine Zidane.\r\n\r\nNato nel quartiere Betondorp della periferia di Amsterdam, Johan era figlio di Manus Cruijff e Nel Draaijer i quali si erano trasferiti in via Tuinbouwstraat, dove avevano acquistato una abitazione popolare con un negozio di frutta e verdura, attività lavorativa della famiglia da alcune generazioni. Economicamente non benestanti, Johan e il fratello maggiore di due anni Heini passarono la maggior parte dell\'infanzia giocando partite di calcio con i bambini del quartiere; il piccolo Johan ebbe modo di evidenziare doti sorprendenti già a cinque anni di età. Appena dodicenne perse il padre per un attacco cardiaco; subito dopo la madre dovette cedere la casa e il negozio di prodotti ortofrutticoli. Johan ottenne per lei, dal vicepresidente dell\'Ajax, un posto come donna delle pulizie allo stadio e come commessa al banco del bar della società. Le conseguenti difficoltà economiche furono notevoli, e Johan lasciò gli studi per diventare calciatore. A causa dei suoi piedi piatti e della caviglia sformata, venne scartato dal servizio militare. \r\nIl 13 giugno 1967, al matrimonio del compagno di squadra Piet Keizer, Cruijff conobbe Diana Margaret "Danny" Coster, fotomodella e figlia del ricco commerciante di diamanti Cor Coster, che diventerà poi suo manager. Cruijff e Danny si sposarono il 2 dicembre 1968. Hanno avuto tre figli, Chantal (16 novembre 1970), Susila (27 gennaio 1972) e Jordi, chiamato così in onore di San Giorgio, patrono della Catalogna, nato nel periodo in cui il padre giocava per il Barcellona; il nome fu registrato così nei Paesi Bassi, poiché in Spagna vigeva ancora il franchismo che vietava nomi che ricordassero l\'Indipendentismo catalano. Dalla figlia Chantal, sposatasi con il portiere Jesús Angoy, Cruijff ha avuto il nipote Jessua Andrea, anche lui calciatore.\r\nIl 22 ottobre 2015 comunicò di avere un tumore polmonare, che lo porterà alla morte cinque mesi dopo, il 24 marzo 2016 a Barcellona, all\'età di sessantotto anni.', 'cruyff2.jpg', 'cruyff.jpg', 3, 'Profeta del gol', NULL, NULL);
 
+-- Dump della struttura di tabella db_php.users
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nome` char(50) DEFAULT NULL,
+  `cognome` char(50) DEFAULT NULL,
+  `email` char(50) DEFAULT NULL,
+  `telefono` char(50) DEFAULT NULL,
+  `comune` char(50) DEFAULT NULL,
+  `indirizzo` char(50) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dump dei dati della tabella db_php.users: ~0 rows (circa)
+INSERT INTO `users` (`user_id`, `username`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
+	(1, 'asd', 'asd', 'asd', 'asd', 'asd', NULL, NULL, NULL);
+
 -- Dump della struttura di tabella db_php.if
 CREATE TABLE IF NOT EXISTS `if` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_giocatore` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_IF_giocatori` (`id_giocatore`),
-  CONSTRAINT `FK_IF_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocatore`) ON UPDATE CASCADE
+  KEY `FK_IF_users` (`user_id`),
+  CONSTRAINT `FK_IF_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocatore`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_IF_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dump dei dati della tabella db_php.if: ~0 rows (circa)
+-- Dump della struttura di tabella db_php.edizioni
+CREATE TABLE IF NOT EXISTS `edizioni` (
+  `anno` char(50) NOT NULL,
+  `id_giocatore` int(11) DEFAULT NULL,
+  `foto` char(50) DEFAULT NULL,
+  `squadra` varchar(50) DEFAULT NULL,
+  `descrizione` text DEFAULT NULL,
+  PRIMARY KEY (`anno`),
+  KEY `FK_edizioni_giocatori` (`id_giocatore`),
+  CONSTRAINT `FK_edizioni_giocatori` FOREIGN KEY (`id_giocatore`) REFERENCES `giocatori` (`id_giocatore`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Dump dei dati della tabella db_php.edizioni: ~10 rows (circa)
+INSERT INTO `edizioni` (`anno`, `id_giocatore`, `foto`, `squadra`, `descrizione`) VALUES
+	('2013', 2, '2013.jpg', 'Real Madrid', 'Cristiano Ronaldo ha vinto il Pallone d’Oro 2013. Il fuoriclasse portoghese ha trionfato con 1.365 punti, precedendo Lionel Messi (1.205) e Franck Ribery (1.127).'),
+	('2014', 2, '2014.jpg', 'Real Madrid', 'Il Pallone d\'oro FIFA 2014 è stato consegnato il 12 gennaio 2015 a Zurigo a Cristiano Ronaldo. Il calciatore portoghese ha vinto il trofeo per la terza volta nella sua carriera, dopo i successi del 2008 e del 2013.'),
+	('2015', 1, '2015.jpg', 'Barcellona', 'Per l’argentino del Barcellona si tratta del quinto trionfo della sua straordinaria carriera: sul podio, con lui, CR7, portoghese del Real Madrid, e Neymar, funambolo brasiliano compagno di squadra proprio di Messi al Barcellona. Queste le percentuali di voto: Messi 41.33 %, Ronaldo 27.76 %, Neymar 7.86 %.'),
+	('2016', 2, '2016.webp', 'Real Madrid', 'Cristiano Ronaldo a trionfare per la quarta volta, dietro di lui Lionel Messi ed Antoine Griezmann. Erano trenta i giocatori in lizza per il Pallone d\'Oro 2016, tra questi anche Gigi Buffon, unico italiano e nono nella classifica finale.'),
+	('2017', 2, '2017.avif', 'Real Madrid', 'Come da pronostico Cristiano Ronaldo ha vinto il Pallone d’oro 2017. Si tratta del secondo consecutivo, il 5° in carriera per l’attaccante portoghese che eguaglia il primato di Leo Messi.'),
+	('2018', 4, '2018.jpg', 'Real Madrid', 'Il 33enne centrocampista croato, campione d\'Europa con il Real Madrid e vicecampione del mondo con la Croazia, si aggiudica l\'ambito trofeo che dal 2008 in poi aveva avuto solo due padroni: Ronaldo e Messi.'),
+	('2019', 1, '2019.webp', 'Barcellona', 'Lionel Messi ha vinto il Pallone d’Oro 2019, precedendo Van Dijk e Cristiano Ronaldo. Per il campione del Barcellona, premiato nel corso della cerimonia al Theatre du Chatelet di Parigi, si tratta del sesto Pallone d\'Oro in carriera'),
+	('2021', 1, '2021.webp', 'Barcellona', 'Il Pallone d\'oro 2021 è stato consegnato il 29 novembre 2021 a Parigi ed è stato vinto da Lionel Messi, al settimo successo nella storia del riconoscimento. La pulce sorprende nuovamente tutti.'),
+	('2022', 3, '2022.png', 'Real Madrid', 'Karim Benzema si aggiudica l\'edizione 2022 del Pallone d\'Oro. Come ampiamente previsto, il bomber del Real Madrid ha sbaragliato la concorrenza, ricevendo l\'ambito trofeo direttamente dalle mani di Zinedine Zidane, l\'ultimo in Francia ad aver vinto il titolo nel 1998. Una grande rivincita per l\'attaccante francese di origini algerine, diventato in poco più di un anno un vero re del calcio mondiale.'),
+	('2023', 1, '2023.jpg', 'Inter Miami', 'Leo Messi (campione del mondo 2022 con l\'Argentina) ha ottenuto il suo ottavo riconoscimento come miglior giocatore della stagione. L\'argentino ha superato Erling Haaland (protagonista del treble Premier-FA Cup-Champions con il City) e Kylian Mbappé (finalista nel Mondiale 2022 e campione di Francia con il Psg).');
 
 -- Dump della struttura di tabella db_php.questions
 CREATE TABLE IF NOT EXISTS `questions` (
@@ -110,24 +128,6 @@ CREATE TABLE IF NOT EXISTS `scores` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella db_php.scores: ~0 rows (circa)
-
--- Dump della struttura di tabella db_php.users
-CREATE TABLE IF NOT EXISTS `users` (
-  `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `nome` char(50) DEFAULT NULL,
-  `cognome` char(50) DEFAULT NULL,
-  `email` char(50) DEFAULT NULL,
-  `telefono` char(50) DEFAULT NULL,
-  `comune` char(50) DEFAULT NULL,
-  `indirizzo` char(50) DEFAULT NULL,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Dump dei dati della tabella db_php.users: ~0 rows (circa)
-INSERT INTO `users` (`user_id`, `username`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
-	(1, 'asd', 'asd', 'asd', 'asd', 'asd', NULL, NULL, NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

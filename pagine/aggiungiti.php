@@ -75,7 +75,7 @@
                         </tr>
                         <tr>
                             <td><label for="anno_vincita">Anno vincita: </label></td>
-                            <td><input type="text" name="anno_vincita" required id="anno_vincita"></td>
+                            <td><input type="number" name="anno_vincita" required id="anno_vincita"></td>
                         </tr>
                         <tr>
                             <td><label for="descrizione">Piccola descrizione: </label></td>
@@ -90,69 +90,75 @@
                             <td><input type="text" name="testo" required id="testo"></td>
                         </tr>
                     </table>
-                    <input type="submit" value='invia'>
+                    <input type="submit" value='invia' name = "invia_dati">
                 </form>
                 EOD;
+
+                if(isset($_POST['invia_dati'])){
+
+                
             
         
-                $bla = 'SELECT anno
-                        FROM edizioni';
-                $ris = $conn->query($bla) or die("<p>Query fallita! ".$conn->error."</p>");
-        
+                    $bla = 'SELECT anno
+                            FROM edizioni';
+                    $ris = $conn->query($bla) or die("<p>Query fallita! ".$conn->error."</p>");
+            
 
-                if ($ris->num_rows == 0) {
-                    echo "<p style='text-align: center; font-size: 30px;'>Utente o password non trovati.</p>";
-                    $conn->close();
-                }
-                foreach($ris as $riga){
-                    if($_POST["anno_vincita"] == $riga['anno']){
-                        echo '<p> Anno già di una persona/calciatore </p>';
+                    if ($ris->num_rows == 0) {
+                        echo "<p style='text-align: center; font-size: 30px;'>Utente o password non trovati.</p>";
+                        $conn->close();
                     }
-                }
-                if(isset($_POST['nome'])){
-                    $nome = $_POST['nome'];
-                }
-                if (isset($_POST['cognome'])) {
-                    $cognome = $_POST['cognome'];
-                }
-                
-                if (isset($_POST['nazionalita'])) {
-                    $nazionalita = $_POST['nazionalita'];
-                }
-                
-                if (isset($_POST['squadra'])) {
-                    $squadra = $_POST['squadra'];
-                }
-                
-                if (isset($_POST['anno_vincita'])) {
-                    $anno_vincita = $_POST['anno_vincita'];
-                }
-                
-                if (isset($_POST['descrizione'])) {
-                    $descrizione = $_POST['descrizione'];
-                }
-                
-                if (isset($_POST['soprannome'])) {
-                    $soprannome = $_POST['soprannome'];
-                }
-                
-                if (isset($_POST['testo'])) {
-                    $testo = $_POST['testo'];
-                }
-                $myquery2 = "INSERT INTO giocatori (anno, id_giocatore, squadra, descrizione)
-                                    VALUES ('$anno_vincita', '$squadra', '$descrizione')";
+                    foreach($ris as $riga){
+                        if($_POST["anno_vincita"] == $riga['anno']){
+                            echo '<p> Anno già di una persona/calciatore </p>';
+                            header('Refresh: 5; URL=aggiungiti.php');
+                            die();
+                        }
+                    }
+                    if(isset($_POST['nome'])){
+                        $nome = $_POST['nome'];
+                    }
+                    if (isset($_POST['cognome'])) {
+                        $cognome = $_POST['cognome'];
+                    }
                     
-                $myquery3 = 'SELECT id_giocatore
-                            FROM giocatori
-                            ORDER BY id_giocatore DESC
-                            LIMIT 1';
-                $riga = $myquery3->fetch_assoc();
-                $id = $riga['id_giocatore'];
-                $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione)
-                                    VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione')";
-                       
-        
-    
+                    if (isset($_POST['nazionalita'])) {
+                        $nazionalita = $_POST['nazionalita'];
+                    }
+                    
+                    if (isset($_POST['squadra'])) {
+                        $squadra = $_POST['squadra'];
+                    }
+                    
+                    if (isset($_POST['anno_vincita'])) {
+                        $anno_vincita = $_POST['anno_vincita'];
+                    }
+                    
+                    if (isset($_POST['descrizione'])) {
+                        $descrizione = $_POST['descrizione'];
+                    }
+                    
+                    if (isset($_POST['soprannome'])) {
+                        $soprannome = $_POST['soprannome'];
+                    }
+                    
+                    if (isset($_POST['testo'])) {
+                        $testo = $_POST['testo'];
+                    }
+                    $myquery2 = "INSERT INTO giocatori (anno, id_giocatore, squadra, descrizione)
+                                        VALUES ('$anno_vincita', '$squadra', '$descrizione')";
+                        
+                    $myquery3 = 'SELECT id_giocatore
+                                FROM giocatori
+                                ORDER BY id_giocatore DESC
+                                LIMIT 1';
+                    $riga = $myquery3->fetch_assoc();
+                    $id = $riga['id_giocatore'];
+                    $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione)
+                                        VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione')";
+                }
+            }           
+        }
     
     ?>
 
