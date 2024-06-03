@@ -25,6 +25,7 @@
     ?>
     <div class="page_container">
         <div class="separatore"></div>
+        <div class="separatore"></div>
         <h1 class="titolo_storia">Registrazione</h1>
         <form action="" method="post">
             <!-- da far vedere come ho cambiato lo stile per gli input -->
@@ -44,11 +45,11 @@
                 </tr>
                 <tr>
                     <td><label for="nome">Nome: </label></td>
-                    <td><input type="text" name="nome" id="nome" <?php echo "value = '$nome'" ?>></td>
+                    <td><input type="text" name="nome" id="nome" <?php echo "value = '$nome'" ?> required></td>
                 </tr>
                 <tr>
                     <td><label for="cognome">Cognome: </label></td>
-                    <td><input type="text" name="cognome" id="cognome" <?php echo "value = '$cognome'" ?>></td>
+                    <td><input type="text" name="cognome" id="cognome" <?php echo "value = '$cognome'" ?> required></td>
                 </tr>
                 <tr>
                     <td><label for="email">Email: </label></td>
@@ -66,8 +67,10 @@
                     <td><label for="indirizzo">Indirizzo: </label></td>
                     <td><input type="text" name="indirizzo" id="indirizzo" <?php echo "value = '$indirizzo'" ?>></td>
                 </tr>
+                <tr>
+                    <td style="text-align: center; padding-top: 10px" colspan="2"><input type="submit" value="Invia"></td>
+                </tr>
             </table>
-            <input type="submit" value="Invia">
         </form>
 
         <p>
@@ -90,8 +93,8 @@
                         echo "Questo username è già stato usato";
                     } else {
 
-                        $myquery = "INSERT INTO users (username, password)
-                                    VALUES ('$username', '$password')";
+                        $myquery = "INSERT INTO users (username, password, nome, cognome, email, telefono, comune, indirizzo)
+                                    VALUES ('$username', '$password', '$nome', '$cognome','$email','$telefono','$comune','$indirizzo')";
 
                         if ($conn->query($myquery) === true) {
                             session_start();
@@ -110,6 +113,7 @@
             }
             ?>
         </p>
+        <div class="separatore"></div>
         <?php 
             require('footer.php');
         ?>	

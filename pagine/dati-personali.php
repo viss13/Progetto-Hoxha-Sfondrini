@@ -1,4 +1,5 @@
 <?php
+	$username = $_SESSION['username'];
     require('../db/connessionedb.php');
 
 	$strmodifica = "Modifica";
@@ -50,7 +51,6 @@
 			//echo $sql;
 			$ris = $conn->query($mysql) or die("<p>Query fallita!</p>");
 			$row = $ris->fetch_assoc();
-            echo "$row";
 		?>
 		<form action="" method="post">
 			<table class="tab_input">

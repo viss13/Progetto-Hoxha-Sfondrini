@@ -94,7 +94,7 @@
             }
         }
                 $bla = 'SELECT anno
-                        FROM edizioni'
+                        FROM edizioni';
                 $ris = $conn->query($bla) or die("<p>Query fallita! ".$conn->error."</p>");
         
 
@@ -148,8 +148,8 @@
                 $id = $riga['id_giocatore'];
                 $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione)
                                     VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione')";
-            }           
-        }
+                       
+        
     
     $conn->close();
     ?>
