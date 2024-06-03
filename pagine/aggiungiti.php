@@ -150,8 +150,8 @@
                 $id = $riga['id_giocatore'];
                 $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione)
                                     VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione')";
-            }           
-        }
+                       
+        
     
     
     ?>
