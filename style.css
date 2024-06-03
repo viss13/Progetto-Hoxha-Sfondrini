@@ -21,7 +21,7 @@ header {
 .header__logo1, .header__logo2 {height: 75px;padding: 5px; width: 15%;}
 .header__logo1{display: flex; justify-content: flex-start;}
 .header__logo2{display: flex; justify-content: flex-end;}
-.header__logo2__login{padding-right: 20px;}
+.header__logo2__login, .header__logo2__cerca{padding-right: 20px;}
 .header__logo1__aggiungiti{padding-left: 20px;}
 
 .header__logo1 img, .header__logo2 img {height: 80%; margin-top: 10px;}
@@ -303,12 +303,30 @@ footer{background: black; text-align: center; color: #bfa75d; padding: 30px;}
 .banner:hover{transform: scale(1.01);}
 .banner__img {display: block; height: 100%; width: 30%;}
 .banner__img img {height: 100%; width: 100%; object-fit: cover;}
-
 .banner__copy {width: 70%; display: flex; align-items: center; padding: 10px; color: #c9c9c9;}
 .banner__copy__text{padding:30px;}
 .banner__copy__text h3{font-size: 44px;margin-bottom:0; color: #bfa75d;}
 .banner__copy__text h4{font-size: 27px;margin: 5px 0}
 .banner__copy__text h5{font-size: 18px;margin-top: 0;}
+
+.banner-cerca{
+    display: flex; 
+    height: 400px;
+    width: 800px;
+    flex-wrap: nowrap; 
+    margin: 50px 5px; 
+    background: #222222;
+    border: 10px solid #838181;
+    border-radius: 8px;
+    box-shadow: 10px 25px 30px black;
+    margin: auto;
+    margin-bottom: 50px;
+}
+.banner-cerca__img {display: block; height: 100%; width: 50%;}
+.banner-cerca__img img {height: 100%; width: 100%; object-fit: cover;}
+.banner-cerca__copy {width: 50%; display: flex; align-items: center; justify-content: center; padding: 10px; color: #c9c9c9;}
+.banner-cerca__copy__text{padding:30px; text-align: center;}
+
 
 /* centro flex con sidebar */
 .centro-flex {display: flex; flex-wrap: nowrap; align-items: stretch;}
