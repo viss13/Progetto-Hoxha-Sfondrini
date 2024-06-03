@@ -54,7 +54,7 @@
                                 <div class="banner__copy">
                                     <div class="banner__copy__text">
                                         <h3>$anno</h3>
-                                        <h4>$cognome $nome</h4>
+                                        <h4>$nome $cognome</h4>
                                         <h5>$squadra / $nazionalità</h5>
                                         <p class="spaziatura_p">
                                             $descrizione

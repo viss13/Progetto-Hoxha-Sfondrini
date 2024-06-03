@@ -17,7 +17,10 @@
                 </div>
                 
             </nav>
-            <div class="header__logo2">         
+            <div class="header__logo2">   
+                <div class = "header__logo2__cerca">
+                    <a href="pagine/cerca.php"><img src="immagini/cerca2.png" alt=""></a>
+                </div>      
                 <div class = "header__logo2__login">
                     <a href="pagine/login.php"><img src="immagini/login3.png" alt=""></a>
                 </div>
@@ -62,15 +65,15 @@
                 
             </nav>
             <div class="header__logo2">
-            <div class = "header__logo2__login">
-                <a href="login.php"><img src="../immagini/login3.png" alt=""></a>
-            </div>
+                <div class = "header__logo2__cerca">
+                    <a href="cerca.php"><img src="../immagini/cerca.png" alt=""></a>
+                </div>
+                <div class = "header__logo2__login">
+                    <a href="login.php"><img src="../immagini/login3.png" alt=""></a>
+                </div>
                 <img src="../immagini/logo.png" alt="Logo">
             </div>
         </header>
         EOD;
     }
 ?>
-
-
-        <

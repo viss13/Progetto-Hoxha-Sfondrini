@@ -11,11 +11,11 @@
 <body>
 	<?php require("header.php");?>
     <div class="separatore"></div>
+    <div class="separatore"></div>
 	<div class="page_container">
-		<h1 style="text-align: center; margin-top: 0px">Ricerca giocatori</h1>
-		<p>Cerca il giocatore che vuoi</p>
+		<h1 class="titolo_storia">Ricerca giocatori</h1>
 		<form method="post" action="">
-			<table id="tab_input">
+			<table class="tab_input">
 				<tr>
 					<td><label for="nome">Nome:</label></td>
                     <td><input class="input_ricerca" type="text" name="nome" id="nome" value="<?php echo isset($_POST['nome']) ? $_POST['nome'] : ''; ?>"></td>
@@ -29,7 +29,7 @@
 				</tr>
 			</table>
 		</form>
-
+        <div class="separatore"></div>
 		<p></p>
 
 		
@@ -53,15 +53,28 @@
                         $nome = $riga["nome"];
                         $cognome = $riga["cognome"];
 
-                        echo <<<EOD
-                        <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="card card--storia">
-                            <img class="card__image"src="../immagini/$banner" alt="$banner">
-                            <div class="card__copy">
-                                <h2>$nome $cognome</h2>
-                            </div>
-                        </a>
-                        EOD;
+                        // echo <<<EOD
+                        // <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="card card--storia">
+                        //     <img class="card__image"src="../immagini/$banner" alt="$banner">
+                        //     <div class="card__copy">
+                        //         <h2>$nome $cognome</h2>
+                        //     </div>
+                        // </a>
+                        // EOD;
 
+                        echo <<< EOD
+                            <section class="banner-cerca">
+                                <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="banner-cerca__img">
+                                    <div class="banner__img__filter"></div>
+                                    <img src="../immagini/$banner" alt="">
+                                </a>
+                                <div class="banner-cerca__copy">
+                                    <div class="banner-cerca__copy__text">
+                                        <h1>$nome $cognome</h1>
+                                    </div>
+                                </div>  
+                            </section>       
+                            EOD;
 
                     }
                         
@@ -69,6 +82,9 @@
                 else {
                     echo "<p>Non ho trovato nessun giocatore</p>";
                 }
+            }else{
+                echo "<div class='separatore'></div>
+                        <div class='separatore'></div>";
             }
 
         ?>
