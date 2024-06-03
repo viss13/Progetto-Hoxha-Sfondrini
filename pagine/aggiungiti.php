@@ -1,4 +1,10 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+?>
+
+<?php
     session_start();
     if(!isset($_SESSION['username'])){ 
         echo "<div class='separatore'></div>";
@@ -18,7 +24,7 @@
     <title>Aggiungi Persona</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<body>
+<!-- <body>
     <?php require('header.php');?>
     <div class="separatore"></div>
     <div class="separatore"></div>
@@ -32,12 +38,12 @@
     </div>
 
     <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mi_aggiungo'])) {
+        if (isset($_POST['mi_aggiungo'])) {
             require("../db/connessionedb.php");
-            $sql = "SELECT *
+            $sql = "SELECT nome, cognome
                     FROM users
                     WHERE username = '$username'";
-            $ris = $conn->query($myquery) or die("<p>Query fallita! ".$conn->error."</p>");
+            $ris = $conn->query($sql) or die("<p>Query fallita! ".$conn->error."</p>");
         
 
             if ($ris->num_rows == 0) {
@@ -46,6 +52,7 @@
             }
             else{
                 $riga = $ris->fetch_assoc();
+                echo <<< EOD
                 <form action="" method="post">
                     <table>
                         <tr>
@@ -83,17 +90,71 @@
                     </table>
                     <input type="submit" value='invia'>
                 </form>
-                $bla = 'SELECT'
-                if($_POST["anno_vincita"])
-
+                EOD;
             }
-
-            
-            
         }
+                $bla = 'SELECT anno
+                        FROM edizioni'
+                $ris = $conn->query($bla) or die("<p>Query fallita! ".$conn->error."</p>");
+        
+
+                if ($ris->num_rows == 0) {
+                    echo "<p style='text-align: center; font-size: 30px;'>Utente o password non trovati.</p>";
+                    $conn->close();
+                }
+                foreach($ris as $riga){
+                    if($_POST["anno_vincita"] == $riga['anno']){
+                        echo '<p> Anno già di una persona/calciatore </p>';
+                    }
+                }
+                if(isset($_POST['nome'])){
+                    $nome = $_POST['nome'];
+                }
+                if (isset($_POST['cognome'])) {
+                    $cognome = $_POST['cognome'];
+                }
+                
+                if (isset($_POST['nazionalita'])) {
+                    $nazionalita = $_POST['nazionalita'];
+                }
+                
+                if (isset($_POST['squadra'])) {
+                    $squadra = $_POST['squadra'];
+                }
+                
+                if (isset($_POST['anno_vincita'])) {
+                    $anno_vincita = $_POST['anno_vincita'];
+                }
+                
+                if (isset($_POST['descrizione'])) {
+                    $descrizione = $_POST['descrizione'];
+                }
+                
+                if (isset($_POST['soprannome'])) {
+                    $soprannome = $_POST['soprannome'];
+                }
+                
+                if (isset($_POST['testo'])) {
+                    $testo = $_POST['testo'];
+                }
+                $myquery2 = "INSERT INTO giocatori (anno, id_giocatore, squadra, descrizione)
+                                    VALUES ('$anno_vincita', '$squadra', '$descrizione')";
+                    
+                $myquery3 = 'SELECT id_giocatore
+                            FROM giocatori
+                            ORDER BY id_giocatore DESC
+                            LIMIT 1';
+                $riga = $myquery3->fetch_assoc();
+                $id = $riga['id_giocatore'];
+                $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione)
+                                    VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione')";
+            }           
+        }
+    
+    $conn->close();
     ?>
 
 
     
-</body>
+</body> -->
 </html>

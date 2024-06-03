@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     if(basename($_SERVER['PHP_SELF']) == 'index.php'){
         echo <<< EOD
         <header class="w-100">
@@ -67,6 +69,9 @@
                 
             </nav>
             <div class="header__logo2">
+                <div class = "header__logo2__cerca">
+                    <a href="cerca.php"><img src="../immagini/cerca.png" alt=""></a>
+                </div>
             <div class = "header__logo2__login">
                 <a href="login.php"><img src="../immagini/login3.png" alt=""></a>
             </div>
