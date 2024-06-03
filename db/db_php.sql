@@ -116,12 +116,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `nome` char(50) DEFAULT NULL,
+  `cognome` char(50) DEFAULT NULL,
+  `email` char(50) DEFAULT NULL,
+  `telefono` char(50) DEFAULT NULL,
+  `comune` char(50) DEFAULT NULL,
+  `indirizzo` char(50) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Dump dei dati della tabella db_php.users: ~0 rows (circa)
-INSERT INTO `users` (`user_id`, `username`, `password`) VALUES
-	(1, 'asd', 'asd');
+INSERT INTO `users` (`user_id`, `username`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
+	(1, 'asd', 'asd', NULL, NULL, NULL, NULL, NULL, NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
