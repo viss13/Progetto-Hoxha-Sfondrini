@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- Dump dei dati della tabella db_php.users: ~0 rows (circa)
 INSERT INTO `users` (`user_id`, `username`, `password`, `nome`, `cognome`, `email`, `telefono`, `comune`, `indirizzo`) VALUES
-	(1, 'asd', 'asd', NULL, NULL, NULL, NULL, NULL, NULL);
+	(1, 'asd', 'asd', 'asd', 'asd', 'asd', NULL, NULL, NULL);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

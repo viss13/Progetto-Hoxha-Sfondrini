@@ -24,7 +24,7 @@
     <title>Aggiungi Persona</title>
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
-<!-- <body>
+<body>
     <?php require('header.php');?>
     <div class="separatore"></div>
     <div class="separatore"></div>
@@ -52,16 +52,18 @@
             }
             else{
                 $riga = $ris->fetch_assoc();
+                $nome = $riga['nome'];
+                $cognome = $riga['cognome'];
                 echo <<< EOD
                 <form action="" method="post">
                     <table>
                         <tr>
                             <td><label for="nome">Nome: </label></td>
-                            <td><input type="text" name="nome" required id="nome" value="$riga['nome']" disabled='disabled'></td>
+                            <td><input type="text" name="nome" required id="nome" value="$nome" disabled='disabled'></td>
                         </tr>
                         <tr>
                             <td><label for="cognome">Cognome: </label></td>
-                            <td><input type="text" name="cognome" required id="cognome" value="$riga['cognome']" disabled ='disabled'></td>
+                            <td><input type="text" name="cognome" required id="cognome" value="$cognome" disabled ='disabled'></td>
                         </tr>
                         <tr>
                             <td><label for="nazionalità">Nazionalità: </label></td>
@@ -91,10 +93,10 @@
                     <input type="submit" value='invia'>
                 </form>
                 EOD;
-            }
-        }
+            
+        
                 $bla = 'SELECT anno
-                        FROM edizioni'
+                        FROM edizioni';
                 $ris = $conn->query($bla) or die("<p>Query fallita! ".$conn->error."</p>");
         
 
@@ -151,10 +153,10 @@
             }           
         }
     
-    $conn->close();
+    
     ?>
 
 
     
-</body> -->
+</body>
 </html>
