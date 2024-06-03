@@ -3,6 +3,7 @@
     if (isset($_POST["password"])) $password = $_POST["password"]; else $password = "";
 ?>
 
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -18,6 +19,7 @@
     <?php
         session_start();
         if(!isset($_SESSION['username'])){
+            // login effettivo
             echo <<< EOD
                 <div class="page_container">
                     <div class="separatore"></div>
@@ -72,6 +74,10 @@
     
         }
         else{
+            echo "<div class='separatore'></div>";
+            echo "<div class='separatore'></div>";
+            echo "<div class='separatore'></div>";
+            require('dati-personali.php');
             echo <<<EOD
             <div class="separatore"></div>
             <div class="separatore"></div>
