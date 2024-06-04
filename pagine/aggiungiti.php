@@ -1,15 +1,19 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-session_start();
-if (!isset($_SESSION['username'])) {
-    echo "<div class='separatore'></div>";
-    echo "<p style='margin: auto;'>Per accedere alla pagina devi essere loggato. Tra 5 secondi sarai reindirizzato alla pagina di login.</p>";
-    header('Refresh: 5; URL=login.php');
-    die();
-}
-$username = $_SESSION["username"];
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        echo "<div class='separatore'></div>";
+        echo "<p style='margin: auto;'>Per accedere alla pagina devi essere loggato. Tra 5 secondi sarai reindirizzato alla pagina di login.</p>";
+        header('Refresh: 5; URL=login.php');
+        die();
+    }
+    $username = $_SESSION["username"];
+    require('../db/connessionedb.php');
+    $myquery = "SELECT user_id
+                FROM users
+                WHERE username = '$username'";
+    $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
+    $riga = $ris->fetch_assoc();
+    $user_id = $riga['user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +39,6 @@ $username = $_SESSION["username"];
 
     <?php
     if (isset($_POST['mi_aggiungo'])) {
-        require("../db/connessionedb.php");
         $sql = "SELECT nome, cognome FROM users WHERE username = '$username'";
         $ris = $conn->query($sql) or die("<p>Query fallita! " . $conn->error . "</p>");
 
@@ -225,8 +228,8 @@ $username = $_SESSION["username"];
                         VALUES ('$nome', '$cognome', '$nazionalita', '$soprannome', '$testo', '$foto', '$foto')";
             if ($conn->query($myquery2) === TRUE) {
                 $id = $conn->insert_id;
-                $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione, foto) 
-                            VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione', '$foto')";
+                $myquery = "INSERT INTO edizioni (anno, id_giocatore, squadra, descrizione, foto, user_id) 
+                            VALUES ('$anno_vincita', '$id', '$squadra', '$descrizione', '$foto', $user_id)";
                 if ($conn->query($myquery) === TRUE) {
                     echo "<p style = 'text-align: center;'>Tutto inserito! Controlla la pagina vincitori!</p>";
                 } else {
