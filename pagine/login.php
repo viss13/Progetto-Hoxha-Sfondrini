@@ -14,12 +14,12 @@
 </head>
 <body>
     <?php
-        require("header.php");
-    ?>
-    <?php
         session_start();
+        $loggare = false;
         if(!isset($_SESSION['username'])){
             // login effettivo
+            $loggare = true;
+            require("header.php");
             echo <<< EOD
                 <div class="page_container">
                     <div class="separatore"></div>
@@ -74,6 +74,7 @@
     
         }
         else{
+            require("header.php");
             echo "<div class='separatore'></div>";
             echo "<div class='separatore'></div>";
             require('dati-personali.php');
