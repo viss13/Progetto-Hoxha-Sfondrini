@@ -226,6 +226,11 @@ label{
     font-size: 25px;
     margin-left: 80px;
 }
+.label_2{
+    height: 40px;
+    font-size: 25px;
+    margin-left: 10px;
+}
 
 input{
 	font-family: 'Open Sans', Verdana, 'DejaVu Sans', Arial, sans-serif;

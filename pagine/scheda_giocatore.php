@@ -54,7 +54,7 @@
            <?php echo "<img src='../immagini/$copertina' alt='$copertina' class='cover_img'>" ?> 
         </section>
 
-        <section class="text hidden-content">
+        <section class="text">
             <div class="text__copy">
                 <?php 
                     $paragrafi = explode("\n", $testo);
