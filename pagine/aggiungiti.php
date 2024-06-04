@@ -161,13 +161,10 @@
     if (isset($_POST['invia_dati'])) {
         require("../db/connessionedb.php");
 
-        
-        // Definire la directory di destinazione relativa
+    
         $target_dir = "../immagini/";
         $target_file = $target_dir . basename($_FILES["foto"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        // Verifica se il file è effettivamente un'immagine
         if (isset($_POST["submit"])) {
             $check = getimagesize($_FILES["foto"]["tmp_name"]);
             if ($check == false) {
@@ -176,24 +173,18 @@
                 die(); 
             }
         }
-
-        // Verifica se il file esiste già
         if (file_exists($target_file)) {
             echo "<p style = 'text-align: center;'>Spiacente, il file esiste già.</p>";
             header('Refresh: 3; URL=aggiungiti.php');
             die();
             
         }
-
-        // Limita la dimensione del file
         if ($_FILES["foto"]["size"] > 500000) {
             echo "<p style = 'text-align: center;'>Spiacente, il file è troppo grande.</p>";
             header('Refresh: 3; URL=aggiungiti.php');
             die();
             
         }
-
-        // Permette solo alcuni formati di file
         if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
             echo "<p style = 'text-align: center;'>Spiacente, solo i file JPG, JPEG, PNG e GIF sono permessi.</p>";
             header('Refresh: 3; URL=aggiungiti.php');
@@ -201,7 +192,6 @@
             
         }
 
-        // Verifica se $uploadOk è impostato a 0 a causa di un errore
         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
             $foto = basename($_FILES["foto"]["name"]);
         } else {
@@ -210,6 +200,7 @@
         
         
 
+        
         $anno_vincita = $conn->real_escape_string($_POST['anno_vincita']);
         $nazionalita = $conn->real_escape_string($_POST['nazionalita']);
         $squadra = $conn->real_escape_string($_POST['squadra']);

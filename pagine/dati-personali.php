@@ -24,7 +24,7 @@
 						indirizzo = '".$_POST["indirizzo"]."' 
 					WHERE username = '".$username."'";
 			if($conn->query($sql) === true) {
-				//echo "Record updated successfully";
+
 			} else {
 				echo "Error updating record: " . $conn->error;
 			}
@@ -48,7 +48,6 @@
 			$mysql = "SELECT username, password, nome, cognome, email, telefono, comune, indirizzo 
 				FROM users 
 				WHERE username='$username'";
-			//echo $sql;
 			$ris = $conn->query($mysql) or die("<p>Query fallita!</p>");
 			$row = $ris->fetch_assoc();
 		?>

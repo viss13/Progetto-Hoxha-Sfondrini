@@ -17,7 +17,6 @@
         session_start();
         $loggare = false;
         if(!isset($_SESSION['username'])){
-            // login effettivo
             $loggare = true;
             require("header.php");
             echo <<< EOD

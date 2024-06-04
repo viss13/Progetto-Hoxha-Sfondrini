@@ -28,7 +28,7 @@
         <div class="separatore"></div>
         <h1 class="titolo_storia">Registrazione</h1>
         <form action="" method="post">
-            <!-- da far vedere come ho cambiato lo stile per gli input -->
+
             <table class="tab_input tab_registrazione">
                 <tr>
                     <td><label for="username">Username: </label></td>
@@ -86,7 +86,7 @@
                     $myquery = "SELECT username 
 						    FROM users 
 						    WHERE username='$username'";
-                    //echo $myquery;
+
 
                     $ris = $conn->query($myquery) or die("<p>Query fallita!</p>");
                     if ($ris->num_rows > 0) {
