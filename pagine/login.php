@@ -76,13 +76,10 @@
         else{
             echo "<div class='separatore'></div>";
             echo "<div class='separatore'></div>";
-            echo "<div class='separatore'></div>";
             require('dati-personali.php');
             echo <<<EOD
             <div class="separatore"></div>
-            <div class="separatore"></div>
             <a href="logout.php" style = "text-decoration: none;"><h1 class="titolo_storia">LOGOUT</h1></a>
-            <div style = "height: 450px;"></div>
             EOD;
         }
     ?>
