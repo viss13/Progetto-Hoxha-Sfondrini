@@ -30,7 +30,7 @@
             </div>
         </header>
         EOD;
-    }elseif(basename($_SERVER['PHP_SELF']) == 'login.php'){
+    }elseif(basename($_SERVER['PHP_SELF']) == 'login.php' and $loggare){
         echo <<< EOD
         <header class="w-100">
             <div class="header__logo1">
