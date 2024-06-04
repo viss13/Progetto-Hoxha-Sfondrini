@@ -85,8 +85,11 @@
                         <td><input type="text" name="testo" id="testo" required></td>
                     </tr>
                     <tr>
-                        <td><label for="foto" class="label_2">Foto (consigliamo foto più grandi in lunghezza che in altezza): </label></td>
+                        <td><label for="foto" class="label_2">Foto: </label></td>
                         <td><input type="file" name="foto" id="foto"></td>
+                    </tr>
+                    <tr>
+                        <td><h3>*consigliamo foto più grandi in lunghezza che in altezza</h3></td>
                     </tr>
                     <tr><td colspan = '2' style = "width: 0px;"><input type="hidden" name="nome" value="$nome"></td></tr>
                     <tr><td colspan = '2'><input type="hidden" name="cognome" value="$cognome"></td></tr>
@@ -240,7 +243,7 @@
             }
         }
         $conn->close();
-    }
-    ?>
+    } 
+    ?> 
 </body>
 </html>

@@ -44,7 +44,9 @@
                         FROM giocatori
                         WHERE nome LIKE '%$nome%'
                             AND cognome LIKE '%$cognome%'";
-                //echo $_POST["titolo_da_cercare"];
+
+
+
                 $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
                 if ($ris->num_rows > 0) {                
                     foreach($ris as $riga){
@@ -52,15 +54,6 @@
                         $banner = $riga["banner"];
                         $nome = $riga["nome"];
                         $cognome = $riga["cognome"];
-
-                        // echo <<<EOD
-                        // <a href="scheda_giocatore.php?id_giocatore=$id_giocatore" class="card card--storia">
-                        //     <img class="card__image"src="../immagini/$banner" alt="$banner">
-                        //     <div class="card__copy">
-                        //         <h2>$nome $cognome</h2>
-                        //     </div>
-                        // </a>
-                        // EOD;
 
                         echo <<< EOD
                             <section class="banner-cerca">
@@ -80,7 +73,7 @@
                         
                 }
                 else {
-                    echo "<p>Non ho trovato nessun giocatore</p>";
+                    echo "<p style = 'text-align: center;'>Non ho trovato nessun giocatore</p>";
                 }
             }else{
                 echo "<div class='separatore'></div>
