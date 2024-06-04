@@ -18,7 +18,6 @@
                 WHERE id_giocatore=$id_giocatore"; 
         $ris = $conn->query($sql) or die("<p>Query fallita!</p>");
         if ($ris->num_rows == 0) {
-            // decidere che cosa fare
             die ("giocatore non trovato!");
         } else {
             $riga = $ris->fetch_assoc();
